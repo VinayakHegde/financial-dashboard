@@ -1,5 +1,21 @@
+import Header from '@/components/header'
 import './globals.css'
 import type { Metadata } from 'next'
+import { Inter, Lato } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+
+const lato = Lato({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lato',
+  weight: '400'
+})
+
 
 export const metadata: Metadata = {
   title: 'Finance Dashboard',
@@ -13,10 +29,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <header>
-          Header Nav
-        </header>
+      <body className={`min-h-screen flex flex-col ${inter.variable} ${lato.variable}`}>
+        <Header />
         <main className="flex flex-1">
           <aside>
             side bar
