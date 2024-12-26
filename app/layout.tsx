@@ -6,13 +6,13 @@ import { Inter, Lato } from 'next/font/google'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-primary',
 })
 
 const lato = Lato({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lato',
+  variable: '--font-secondary',
   weight: '400'
 })
 
@@ -32,10 +32,10 @@ export default function RootLayout({
       <body className={`min-h-screen flex flex-col ${inter.variable} ${lato.variable}`}>
         <Header />
         <main className="flex flex-1">
-          <aside>
+          <aside className="min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
             side bar
           </aside>
-          <div className="flex flex-col flex-1 px-4">
+          <div className="flex flex-col py-5 px-8">
             {children}
           </div>
         </main>

@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'],
-        lato: ['var(--font-lato)', 'sans-serif'],
+        primary: ['var(--font-primary)', 'sans-serif'],
+        secondary: ['var(--font-secondary)', 'sans-serif'],
       },
       colors: {
         primary: '#2F6FED',
@@ -21,6 +21,7 @@ export default {
         'blue-300': '#343C6A',
         'blue-200': '#718EBF',
         'blue-100': '#8BA3CB',
+        'blue-50': '#DFEAF2',
       },
       fontSize: {
         'xs': '12px',
@@ -43,7 +44,11 @@ export default {
       },
       screens: {
         'mobile': '576px',
-        'desktop': '778px',
+        'desktop': '900px',
+      },
+      backgroundImage: {
+        'dark-card': 'linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%)',
+        'dark-card-number': 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)',
       },
     },
   },
