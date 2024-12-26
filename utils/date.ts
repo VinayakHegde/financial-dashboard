@@ -9,3 +9,11 @@ export const toLocaleDate = (dateString: string) => {
 
   return formattedDate;
 }
+
+export const getWeekday = (dateString: string) => {
+  const date = new Date(dateString);
+
+  const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+  return weekday;
+}
