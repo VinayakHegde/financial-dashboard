@@ -35,7 +35,7 @@ export default function RootLayout({
           <aside className="min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
             side bar
           </aside>
-          <div className="flex flex-col py-5 px-8">
+          <div className="flex flex-col py-5 desktop:px-8">
             {children}
           </div>
         </main>
