@@ -1,16 +1,19 @@
 import { MyCards } from "@/components/my-cards";
+import { RecentTransactions } from "@/components/recent-transactions";
 import { getMyCards } from "@/services/get-my-cards";
+import { getTransactions } from "@/services/get-transactions";
 
 
 export default async function DashboardPage() {
-  const [cards] = await Promise.all([
-    getMyCards()
+  const [cards, transactions] = await Promise.all([
+    getMyCards(),
+    getTransactions()
   ])
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col desktop:flex-row justify-between gap-4">
+      <div className="flex flex-col desktop:flex-row justify-between gap-8">
         <MyCards cards={cards}/>
-        {/* <RecentTransactions /> */}
+        <RecentTransactions transactions={transactions} />
       </div>
 
       {/* 
