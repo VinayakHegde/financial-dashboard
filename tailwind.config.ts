@@ -22,6 +22,13 @@ export default {
         'blue-200': '#718EBF',
         'blue-100': '#8BA3CB',
         'blue-50': '#DFEAF2',
+        'warning-100': '#FFF5D9',
+        'info-100': '#E7EDFF',
+        'success-100': '#DCFAF8',
+        'danger': '#FF4B4A',
+        'success': '#41D4A8',
+
+
       },
       fontSize: {
         'xs': '12px',
