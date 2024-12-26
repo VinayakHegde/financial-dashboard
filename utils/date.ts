@@ -17,3 +17,11 @@ export const getWeekday = (dateString: string) => {
 
   return weekday;
 }
+
+export const getMonth = (dateString: string, format: 'long' | 'short' = "short") => {
+  const date = new Date(dateString);
+
+  const month = date.toLocaleDateString('en-US', { month: format });
+
+  return month;
+}
