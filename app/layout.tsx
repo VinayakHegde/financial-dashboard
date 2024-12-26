@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen flex flex-col ${inter.variable} ${lato.variable}`}>
+      <body className={`min-h-screen flex flex-col bg-white desktop:bg-gray-100 ${inter.variable} ${lato.variable}`}>
         <Header />
         <main className="flex flex-1">
           <aside className="min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
