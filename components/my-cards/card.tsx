@@ -3,10 +3,11 @@
 import { Typography } from '../typography'
 import { toCurrency } from '@/utils/to-currency'
 import { Image } from '../image'
+import { maskNumber } from '@/utils/mask-number'
 
 export type CardType = {
   id: number
-  cardNumber: string
+  cardNumber: number
   cardholderName: string
   balance: number
   expires: string
@@ -38,7 +39,7 @@ export const Card = (props: CardType) => {
       </div>
 
       <div className={`${isCreditCard ? 'bg-dark-card-number' : 'border-t border-t-blue-50'} p-8 flex items-center justify-between`}>
-        <Typography isSecondaryFont type='body' size='custom-22' weight='semibold' color='inherit'>{props.cardNumber}</Typography>
+        <Typography isSecondaryFont type='body' size='custom-22' weight='semibold' color='inherit'>{maskNumber(props.cardNumber)}</Typography>
         <Image src={`/card-vendor-${isCreditCard ? 'light' : 'dark'}.svg`} alt="Card Vendor" className='!w-[44px] !h-[30px]' />
       </div>
     </div>
