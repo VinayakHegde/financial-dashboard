@@ -10,6 +10,7 @@ import {
   AreaChart,
   Area,
 } from 'recharts'
+import { XAxisTick, YAxisTick } from '../axis-tick'
 
 type Props = {
   balanceHistory: BalanceRecord[]
@@ -20,22 +21,18 @@ const CustomXAxisTick = ({ x, y, payload }: any) => {
   const { value, index } = payload;
   if (index === 7) return null;
   return (
-    <text x={x} y={y + 15} textAnchor="start" className='fill-blue-200 text-sm font-normal font-inter' >
-      {value}
-    </text>
+    <XAxisTick x={x} y={y} value={value} textAnchor="start" />
   );
 };
 
 const CustomYAxisTick = ({ x, y, payload }: any) => (
-  <text x={x - 10} y={y} textAnchor="end" dy={3} className='fill-blue-200 text-sm font-normal font-inter'>
-    {payload.value}
-  </text>
+  <YAxisTick x={x} y={y} value={payload.value} />
 );
 
 export default function BalanceHistoryChart({ balanceHistory }: Props) {
 
   return (
-    <div style={{ width: '100%', height: 275 }}>
+    <div className='h-[275px] w-full'>
       <ResponsiveContainer>
         <AreaChart data={balanceHistory.slice(0, 8)}>
           <defs>
@@ -46,10 +43,7 @@ export default function BalanceHistoryChart({ balanceHistory }: Props) {
           </defs>
           <CartesianGrid strokeDasharray="3 3" />
 
-          <XAxis
-            dataKey="month"
-            tick={<CustomXAxisTick />}
-          />
+          <XAxis dataKey="month" tick={<CustomXAxisTick />} />
           <YAxis tick={<CustomYAxisTick />} />
           <Tooltip />
           <Area type="monotone" dataKey="balance" stroke="#1814F3"

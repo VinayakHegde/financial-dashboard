@@ -14,8 +14,9 @@ import {
   Legend,
 } from 'recharts'
 import { Typography } from '../typography';
+import { XAxisTick, YAxisTick } from '../axis-tick';
 
-const RoundedBar = (props:any) => {
+const RoundedBar = (props: any) => {
   const { x, y, height, className } = props;
   return (
     <>
@@ -34,8 +35,8 @@ const RoundedBar = (props:any) => {
         width={15}
         height={height}
         className={`${className} hidden desktop:block`}
-        rx={12}
-        ry={12}
+        rx={8}
+        ry={8}
       />
     </>
   );
@@ -79,6 +80,15 @@ const CustomLegend = (props: any) => {
     </div>
   );
 };
+
+
+const CustomXAxisTick = ({ x, y, payload: { value } }: any) => (
+  <XAxisTick x={x} y={y} value={value} />
+);
+
+const CustomYAxisTick = ({ x, y, payload }: any) => (
+  <YAxisTick x={x} y={y} value={payload.value} />
+);
 export const WeeklyActivityChart = ({ activities }: { activities: Activity[] }) => {
 
   return (
@@ -86,8 +96,8 @@ export const WeeklyActivityChart = ({ activities }: { activities: Activity[] }) 
       <ResponsiveContainer>
         <BarChart data={activities.slice(0, 7)} barGap={-20} maxBarSize={15}>
           <CartesianGrid vertical={false} />
-          <XAxis dataKey="date" />
-          <YAxis />
+          <XAxis dataKey="date" tick={<CustomXAxisTick />} />
+          <YAxis tick={<CustomYAxisTick />} />
           <Tooltip content={<CustomTooltip {...{}} />} />
           <Legend align="right" verticalAlign="top" layout="horizontal" content={<CustomLegend />} />
           <Bar dataKey="withdrawal" shape={<RoundedBar className="fill-gray-1000" />} />

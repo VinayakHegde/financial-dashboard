@@ -6,7 +6,7 @@ type Props = {
 }
 export const Transfer = ({ amount }: Props) => {
   return (
-    <div className="flex justify-between items-center mt-5">
+    <div className="flex justify-between items-center py-5">
       <Typography type="body" size="md" weight="normal" color="blue-200">Write Amount</Typography>
       <div className="flex desktop:w-[265px] bg-gray-500 rounded-[50px] items-center">
         <input className="flex-1 flex desktop:w-[140px] h-full bg-transparent rounded-l-[50px] indent-8 text-blue-200 outline-none" type="number" placeholder={amount.toFixed(2)} />

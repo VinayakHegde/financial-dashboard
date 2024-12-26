@@ -15,7 +15,7 @@ export const QuickTransfer = ({ contacts }: Props) => {
   return (
     <Section title="Quick Transfer"
       className="desktop:!w-[450px]">
-      <ul className='flex items-center justify-between'>
+      <ul className='flex items-center justify-between py-4'>
         {
           contacts.slice(0, 3).map(contact => (
             <TransferTo key={contact.id} contact={contact} />
