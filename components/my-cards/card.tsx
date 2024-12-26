@@ -16,7 +16,7 @@ export type CardType = {
 export const Card = (props: CardType) => {
   const isCreditCard = props.category === 'credit';
   return (
-    <div className={`border rounded-[25px] w-[350px] h-fit ${isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-blue-50'}  flex flex-col justify-between`}>
+    <div className={`border rounded-[25px] min-w-[350px] h-fit ${isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-blue-50'}  flex flex-col justify-between`}>
       <div className="px-8 py-6 flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <div>
