@@ -11,10 +11,11 @@ export const Typography = (props: TypographyProps) => {
 type BodyProps = {
   children: string;
   type: 'body';
-  numeric?: boolean;
+  isSecondaryFont?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'custom-13' | 'custom-15' | 'custom-17' | 'custom-22' | 'custom-25';
   weight?: 'normal' | 'medium' | 'semibold' | 'bold' | 'x-bold';
-  color?: 'blue-300' | 'blue-200' | 'blue-100' | 'gray-300' | 'gray-500' | 'gray-1000';
+  color?: 'blue-300' | 'blue-200' | 'blue-100' | 'gray-300' | 'gray-500' | 'gray-1000' | 'inherit';
+  uppercase?: boolean;
 };
 const getTextSize = (size: BodyProps['size']) => {
   switch (size) {
@@ -39,11 +40,11 @@ const getTextSize = (size: BodyProps['size']) => {
   }
 }
 
-const getFontFamily = (numeric: BodyProps['numeric']) => {
-  if (numeric) {
-    return 'font-lato';
+const getFontFamily = (isSecondaryFont: BodyProps['isSecondaryFont']) => {
+  if (isSecondaryFont) {
+    return 'font-secondary';
   }
-  return 'font-inter';
+  return 'font-primary';
 }
 
 const getFontWeight = (weight: BodyProps['weight']) => {
@@ -75,6 +76,8 @@ const getTextColor = (color: BodyProps['color']) => {
       return 'text-gray-500';
     case 'gray-1000':
       return 'text-gray-1000';
+    case 'inherit':
+      return 'text-inherit';
     default:
       return 'text-blue-300';
   }
@@ -82,13 +85,14 @@ const getTextColor = (color: BodyProps['color']) => {
 const Body = ({
   children,
   size = 'sm',
-  numeric = false,
+  isSecondaryFont = false,
   weight = 'semibold',
   color = 'blue-300',
+  uppercase,
 }: BodyProps) => {
 
   return (
-    <p className={`${getTextSize(size)} ${getFontFamily(numeric)} ${getFontWeight(weight)} ${getTextColor(color)}`}>
+    <p className={`${getTextSize(size)} ${getFontFamily(isSecondaryFont)} ${getFontWeight(weight)} ${getTextColor(color)} ${uppercase ? 'uppercase' : ''}`}>
       {children}
     </p>
   )
@@ -101,10 +105,10 @@ type HeadingProps = {
 
 const Heading = (props: HeadingProps) => {
   if (props.type === 'heading-1') {
-    return <h1 className="text-custom-28 text-blue-300 font-inter font-semibold">{props.children}</h1>
+    return <h1 className="text-custom-28 text-blue-300 font-primary font-semibold">{props.children}</h1>
   }
   return (
-    <h2 className="text-custom-22 text-blue-300 font-inter font-semibold">
+    <h2 className="text-custom-22 text-blue-300 font-primary font-semibold">
       {props.children}
     </h2>
   )
