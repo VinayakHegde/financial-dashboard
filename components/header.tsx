@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md flex flex-col desktop:flex-row">
-      <div className="hidden desktop:flex gap-2 items-center p-5 border-r border-gray-900">
+      <div className="min-w-64 hidden desktop:flex border-r border-gray-900 gap-2 items-center p-5">
         <Image src="/task.svg" alt="task" className='!w-[35px] !h-[35px]'/>
         <Typography type='body' size='custom-25' weight='x-bold'>Soar Task</Typography>
       </div>
