@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Livia Bator",
+    "role": "CEO",
+    "avatar": "livia"
+  },
+  {
+    "id": 2,
+    "name": "Randy Press",
+    "role": "Director",
+    "avatar": "randy"
+  },
+  {
+    "id": 3,
+    "name": "Workman",
+    "role": "Designer",
+    "avatar": "workman-01"
+  },
+  {
+    "id": 4,
+    "name": "Workman",
+    "role": "Designer",
+    "avatar": "workman-02"
+  },
+  {
+    "id": 5,
+    "name": "Workman",
+    "role": "Designer",
+    "avatar": "workman-03"
+  }
+]
