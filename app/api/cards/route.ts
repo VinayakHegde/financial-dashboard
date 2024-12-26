@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 type Card = {
   id: number
-  cardNumber: string
+  cardNumber: number
   cardholderName: string
   balance: number
   expires: string
@@ -13,7 +13,7 @@ export async function GET() {
   const mockCards: Card[] = [
     {
       id: 1,
-      cardNumber: '3778 **** **** 1234',
+      cardNumber: 3778123412341234,
       cardholderName: 'Jane Smith',
       expires: '12/29',
       balance: 2500.32,
@@ -21,7 +21,7 @@ export async function GET() {
     },
     {
       id: 2,
-      cardNumber: '4665 **** **** 5678',
+      cardNumber: 4665123412345678,
       cardholderName: 'Jane Smith',
       expires: '10/28',
       balance: 4820.75,
@@ -29,7 +29,7 @@ export async function GET() {
     },
     {
       id: 3,
-      cardNumber: '3778 **** **** 1234',
+      cardNumber: 3778123412341234,
       cardholderName: 'Jane Smith',
       expires: '12/29',
       balance: 2500.32,
@@ -37,7 +37,7 @@ export async function GET() {
     },
     {
       id: 4,
-      cardNumber: '4665 **** **** 5678',
+      cardNumber: 4665123412345678,
       cardholderName: 'Jane Smith',
       expires: '10/28',
       balance: 4820.75,
