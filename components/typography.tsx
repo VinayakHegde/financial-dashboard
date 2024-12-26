@@ -12,13 +12,15 @@ type BodyProps = {
   children: string;
   type: 'body';
   isSecondaryFont?: boolean;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'custom-13' | 'custom-15' | 'custom-17' | 'custom-22' | 'custom-25';
+  size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'custom-13' | 'custom-15' | 'custom-17' | 'custom-22' | 'custom-25';
   weight?: 'normal' | 'medium' | 'semibold' | 'bold' | 'x-bold';
   color?: 'blue-300' | 'blue-200' | 'blue-100' | 'gray-300' | 'gray-500' | 'gray-1000' | 'inherit';
   uppercase?: boolean;
 };
 const getTextSize = (size: BodyProps['size']) => {
   switch (size) {
+    case 'xxs':
+      return 'text-xxs';
     case 'sm':
       return 'text-sm';
     case 'md':
