@@ -10,20 +10,20 @@ export default async function DashboardPage() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col desktop:flex-row justify-between gap-4">
         <MyCards cards={cards}/>
-        <p>RecentTransactions</p>
+        {/* <RecentTransactions /> */}
       </div>
 
-      {/* Middle Column: Weekly Activity + Expense Stats */}
+      {/* 
       <div className="flex flex-col desktop:flex-row justify-between gap-4">
-        <p>WeeklyActivityChart </p>
-        <p>ExpenseStatistics </p>
+        <WeeklyActivity />
+        <ExpenseStatistics />
       </div>
 
-      {/* Right Column: Quick Transfer + Balance History */}
       <div className="flex flex-col desktop:flex-row justify-between gap-4">
-        <p>QuickTransfer </p>
-        <p>BalanceHistoryChart </p>
-      </div>
+        <QuickTransfer />
+        <BalanceHistory />
+      </div> 
+      */}
     </div>
   )
 }
