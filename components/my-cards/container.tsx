@@ -7,7 +7,7 @@ import { Card, CardType } from './card'
 
 export const MyCards = ({ cards }: { cards: CardType[] }) => {
   return (
-    <section className='flex flex-col gap-6 w-screen overflow-hidden'>
+    <section className='flex flex-col gap-6 w-screen desktop:w-fit overflow-hidden'>
       <div className="flex justify-between items-center px-6 desktop:px-0">
         <Typography type='heading-2'>My Cards</Typography>
         <Link href="/cards">
