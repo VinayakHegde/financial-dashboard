@@ -4,7 +4,7 @@ import { Transaction } from '@/services/get-transactions'
 import { Image } from '../image'
 import { Typography } from '../typography'
 import { toCurrency } from '@/utils/to-currency'
-import { toLocaleDate } from '@/utils/to-locale-date'
+import { toLocaleDate } from '@/utils/date'
 
 type Props = {
   transaction: Transaction
@@ -25,7 +25,7 @@ const getBackgroundColor = (logo?: Transaction['logo']) => {
 export const RecentTransaction = ({ transaction }: Props) => {
   return (
     <div className="flex items-center gap-4">
-      <div className={`${getBackgroundColor(transaction.logo)} flex items-center rounded-full overflow-hidden hidden desktop:block`}>
+      <div className={`${getBackgroundColor(transaction.logo)} flex items-center rounded-full overflow-hidden`}>
         {transaction.logo && <Image src={`/${transaction.logo}.svg`} alt={transaction.logo} />}
       </div>
       <div className="flex flex-1 flex-col gap-1">

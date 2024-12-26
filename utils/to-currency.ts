@@ -1,3 +1,3 @@
-export const toCurrency = (value: number, locales?: Intl.LocalesArgument, options?: Intl.NumberFormatOptions) => {
-  return Intl.NumberFormat(locales ?? 'en-US', options ?? { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(value);
+export const toCurrency = (value: number, locales?: Intl.LocalesArgument, maximumFractionDigits = 0) => {
+  return Intl.NumberFormat(locales ?? 'en-US', { style: 'currency', currency: 'USD', maximumFractionDigits }).format(value);
 }

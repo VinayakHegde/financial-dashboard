@@ -18,6 +18,7 @@ export default {
         'gray-900': '#E6EFF5',
         'gray-500': "#F5F7FA",
         'gray-300': '#B1B1B1',
+        'gray-200': '#F3F3F5',
         'blue-300': '#343C6A',
         'blue-200': '#718EBF',
         'blue-100': '#8BA3CB',
@@ -27,8 +28,7 @@ export default {
         'success-100': '#DCFAF8',
         'danger': '#FF4B4A',
         'success': '#41D4A8',
-
-
+        'info': '#396AFF',
       },
       fontSize: {
         'xs': '12px',
