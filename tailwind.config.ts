@@ -29,6 +29,7 @@ export default {
         'danger': '#FF4B4A',
         'success': '#41D4A8',
         'info': '#396AFF',
+        'orange': '#FC7900'
       },
       fontSize: {
         'xxs': '10px',

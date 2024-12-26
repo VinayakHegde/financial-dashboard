@@ -1,0 +1,18 @@
+[
+   {
+      "category":"Bills",
+      "value":15
+   },
+   {
+      "category":"Entertainment",
+      "value":30
+   },
+   {
+      "category":"Others",
+      "value":20
+   },
+   {
+      "category":"Investments",
+      "value":35
+   }
+]
