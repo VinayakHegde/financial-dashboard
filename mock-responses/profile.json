@@ -1,0 +1,13 @@
+{
+  "fullName": "Jane Smith",
+  "userName": "jane.smith",
+  "email": "jane.smith@example.com",
+  "dateOfBirth": "1990-05-01T00:00:00.000Z",
+  "presentAddress": "1234 Elm Street",
+  "permanentAddress": "5678 Oak Lane",
+  "city": "Metropolis",
+  "postcode": "12345",
+  "country": "Fictionland",
+  "initialPicture": "app-user",
+  "updatedPicture": null
+}
