@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
 import { Image } from '../image';
+import { appUser } from '@/utils/app-user';
 
 type ProfilePicUploaderProps = {
-  initialImage?: string;
-  onChange?: (file: File) => void;
+  initialImage: string | null;
+  onChange?: (file: string) => void;
   altText?: string;
 };
 
@@ -12,7 +13,7 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
   onChange,
   altText = 'Profile picture',
 }) => {
-  const [preview, setPreview] = useState<string | undefined>(initialImage);
+  const [preview, setPreview] = useState<string | null>(initialImage);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -21,8 +22,7 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
       const file = e.target.files[0];
       const filePreviewUrl = URL.createObjectURL(file);
       setPreview(filePreviewUrl);
-
-      onChange?.(file);
+      onChange?.(filePreviewUrl);
     }
   };
 
@@ -34,13 +34,13 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
     <div className="relative inline-block w-[100px] h-[100px] desktop:w-[90px] desktop:h-[90px] overflow-hidden">
       <Image
         isAvatar
-        src={preview ?? '/app-user-100x100.jpg'}
+        src={preview ?? appUser(100)}
         alt={altText}
         className="h-full w-full object-cover desktop:hidden"
       />
       <Image
         isAvatar
-        src={preview ?? '/app-user-90x90.jpg'}
+        src={preview ?? appUser(90)}
         alt={altText}
         className="h-full w-full object-cover hidden desktop:block"
       />

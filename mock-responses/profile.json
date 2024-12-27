@@ -8,6 +8,5 @@
   "city": "Metropolis",
   "postcode": "12345",
   "country": "Fictionland",
-  "initialPicture": "app-user",
-  "updatedPicture": null
+  "displayPicture": null
 }
