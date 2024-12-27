@@ -22,18 +22,18 @@ export default async function DashboardPage() {
     getBalanceHistory()
   ])
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-col desktop:flex-row justify-between gap-8">
+    <div className="flex flex-col gap-4 py-5 ">
+      <div className="flex flex-col desktop:flex-row gap-8">
         <MyCards cards={cards} />
         <RecentTransactions transactions={transactions} />
       </div>
 
-      <div className="flex flex-col desktop:flex-row justify-between gap-4">
+      <div className="flex flex-col desktop:flex-row gap-8">
         <WeeklyActivity activities={activities} />
         <ExpenseStatistics expenses={expenses} />
       </div>
 
-      <div className="flex flex-col desktop:flex-row justify-between gap-4">
+      <div className="flex flex-col desktop:flex-row gap-8">
         <QuickTransfer contacts={contacts} />
         <BalanceHistory balanceHistory={balanceHistory} />
       </div>

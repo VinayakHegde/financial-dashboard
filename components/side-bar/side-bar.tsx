@@ -8,7 +8,7 @@ import { Typography } from "../typography";
 
 export const SideBar = () => {
   return (
-    <aside className="flex flex-col min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
+    <aside className="fixed top-[100px] z-10 bottom-0 flex-col min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
       {items.map((item) => (
         <Item key={item.title} {...item} />
       ))}
