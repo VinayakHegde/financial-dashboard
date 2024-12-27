@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Lato } from 'next/font/google'
+import { SideBar } from '@/components/side-bar'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,9 +33,7 @@ export default function RootLayout({
       <body className={`min-h-screen flex flex-col bg-white desktop:bg-gray-100 ${inter.variable} ${lato.variable}`}>
         <Header />
         <main className="flex flex-1">
-          <aside className="min-w-64 hidden desktop:flex bg-white border-r border-gray-900">
-            side bar
-          </aside>
+          <SideBar />
           <div className="flex flex-col py-5 desktop:px-8">
             {children}
           </div>
