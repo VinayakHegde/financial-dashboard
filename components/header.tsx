@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md flex flex-col desktop:flex-row">
-      <div className="min-w-64 hidden desktop:flex border-r border-gray-900 gap-2 items-center p-5">
+      <div className="min-w-64 hidden desktop:flex border-r border-gray-900 gap-2 items-center p-5 pl-8">
         <Image src="/task.svg" alt="task" className='!w-[35px] !h-[35px]'/>
         <Typography type='body' size='custom-25' weight='x-bold'>Soar Task</Typography>
       </div>
@@ -36,7 +36,7 @@ export default function Header() {
           >
 
             <div className="bg-gray-500 flex items-center p-4 rounded-full overflow-hidden hidden desktop:block">
-              <Image src="/settings.svg" alt="settings" />
+              <Image src="/settings-blue.svg" alt="settings" />
             </div>
           </Link>
 
