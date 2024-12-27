@@ -38,7 +38,7 @@ export const Tabs = ({ children, className = '' }: TabsProps) => {
     const { title, isDisabled } = child.props;
     const isActive = index === activeIndex;
 
-    const baseClasses = 'relative px-4 py-2 text-md font-medium transition-colors font-primary disabled:text-blue-200 disabled:cursor-not-allowed hover:text-gray-700';
+    const baseClasses = 'relative px-4 py-2 text-custom-13 desktop:text-md font-medium transition-colors font-primary disabled:text-blue-200 disabled:cursor-not-allowed hover:text-gray-700';
     const activeClasses = 'text-gray-1000 before:h-1 before:bg-gray-1000 before:w-full before:absolute before:bottom-0 before:left-0 before:transition-all before:duration-300 before:ease-in-out before:rounded-t-[10px]';
 
     return (

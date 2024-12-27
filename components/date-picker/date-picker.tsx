@@ -91,9 +91,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           ev.stopPropagation();
           toggleCalendar();
         }}
-        className="flex items-center justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-[10px] bg-white cursor-pointer hover:border-blue-200 outline-none"
+        className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-[10px] bg-white cursor-pointer hover:border-blue-200 outline-none"
       >
-        <span className="hidden desktop:inline-block">
+        <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
           <Typography
             type="body"
             size="custom-15"
@@ -104,7 +104,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           </Typography>
         </span>
         <span className="desktop:hidden">
-          <Typography type="body" size="xs" weight="normal" color="blue-200">
+          <Typography type="body" size="sm" weight="normal" color="blue-200">
             {formatDateDisplay(selectedDate)}
           </Typography>
         </span>
