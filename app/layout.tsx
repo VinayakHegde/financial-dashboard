@@ -30,11 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen flex flex-col bg-white desktop:bg-gray-100 ${inter.variable} ${lato.variable}`}>
+      <body className={`min-h-screen min-w-full flex flex-col bg-white desktop:bg-gray-100 ${inter.variable} ${lato.variable}`}>
         <Header />
         <main className="flex flex-1">
           <SideBar />
-          <div className="flex flex-col py-5 desktop:px-8">
+          <div className="flex flex-col flex-1 desktop:px-8 desktop:ml-64 desktop:mt-[100px]">
             {children}
           </div>
         </main>

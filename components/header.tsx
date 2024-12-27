@@ -8,14 +8,14 @@ import Search from './search'
 
 const TITLE: Record<string, string> = {
   '/': 'Overview',
-  '/settings': 'Settings',
+  '/setting': 'Setting',
 }
 export default function Header() {
   const pathname = usePathname()
   const title = TITLE[pathname];
 
   return (
-    <header className="bg-white shadow-md flex flex-col desktop:flex-row">
+    <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">
       <div className="min-w-64 hidden desktop:flex border-r border-gray-900 gap-2 items-center p-5 pl-8">
         <Image src="/task.svg" alt="task" className='!w-[35px] !h-[35px]'/>
         <Typography type='body' size='custom-25' weight='x-bold'>Soar Task</Typography>
@@ -31,8 +31,8 @@ export default function Header() {
             <Search />
           </div>
           <Link
-            href="/settings"
-            className={`hover:text-primary ${pathname === '/settings' ? 'text-primary' : ''}`}
+            href="/setting"
+            className={`hover:text-primary ${pathname === '/setting' ? 'text-primary' : ''}`}
           >
 
             <div className="bg-gray-500 flex items-center p-4 rounded-full overflow-hidden hidden desktop:block">

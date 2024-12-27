@@ -49,9 +49,9 @@ export const items: ItemType[] = [
     href: '/my-privileges',
   },
   {
-    title: 'settings',
+    title: 'setting',
     icon: 'settings',
-    href: '/settings',
+    href: '/setting',
     enabled: true,
   },
 ];
