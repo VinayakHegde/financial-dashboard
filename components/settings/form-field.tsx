@@ -8,8 +8,8 @@ type WrapperProps = {
 };
 
 type Props = {
-  register: UseFormRegister<any>;
-  errors: FieldErrors<any>;
+  register: UseFormRegister<IGeneric.UnknownProps>;
+  errors: FieldErrors<IGeneric.UnknownProps>;
   placeholder?: string;
   type?: 'text' | 'email' | 'password';
 } & Omit<WrapperProps, 'children'>;
@@ -65,8 +65,8 @@ export const FormFieldWrapper = ({ id, label, children }: WrapperProps) => (
 );
 
 export const validatedFormField = (
-  register: UseFormRegister<any>,
-  errors: FieldErrors<any>,
+  register: UseFormRegister<IGeneric.UnknownProps>,
+  errors: FieldErrors<IGeneric.UnknownProps>,
 ) => {
   const Component = (props: Omit<Props, 'register' | 'errors'>) => (
     <FormField
@@ -78,19 +78,3 @@ export const validatedFormField = (
   Component.displayName = 'FormField';
   return Component;
 };
-
-/**
- * Inferred TypeScript type:
- * {
- *   fullName: string;
- *   userName: string;
- *   email: string;
- *   dateOfBirth: Date | null;
- *   presentAddress?: string;
- *   permanentAddress?: string;
- *  city?: string;
- * postcode?: string;
- * country?: string;
- *
- * }
- */

@@ -10,7 +10,7 @@ export type BalanceRecord = {
 export const getBalanceHistory = async () => {
   const response = await GET();
   return toCanonical<BalanceRecord[]>(
-    (await response.json()).map((record: any) => ({
+    (await response.json()).map((record: IGeneric.UnknownProps) => ({
       ...record,
       month: getMonth(record.date),
     })),
