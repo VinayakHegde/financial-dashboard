@@ -11,8 +11,7 @@ export type Profile = {
   city: string,
   postcode: string,
   country: string,
-  initialPicture: string,
-  updatedPicture: string | null,
+  displayPicture: string | null,
 }
 
 export const getProfile = async () => {

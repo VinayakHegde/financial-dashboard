@@ -5,13 +5,17 @@ import { usePathname } from 'next/navigation'
 import { Typography } from './typography'
 import { Image } from './image'
 import Search from './search'
+import { useUserContext } from './user-context'
+import { appUser } from '@/utils/app-user'
 
 const TITLE: Record<string, string> = {
   '/': 'Overview',
   '/setting': 'Setting',
 }
+
 export default function Header() {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const user = useUserContext();
   const title = TITLE[pathname];
 
   return (
@@ -44,14 +48,14 @@ export default function Header() {
             <Image src="/notification.svg" alt="notification" />
           </div>
           <Image
-            src="/app-user-60x60.jpg"
+            src={`${user.profile?.displayPicture ?? appUser(60)}`}
             alt="app-user"
             isAvatar
             className="hidden desktop:block"
             width="60px"
             height="60px" />
           <Image
-            src="/app-user-35x35.jpg"
+            src={`${user.profile?.displayPicture ?? appUser(35)}`}
             alt="app-user"
             isAvatar
             className="desktop:hidden h-[35px] w-[35px]"
