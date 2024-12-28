@@ -49,7 +49,12 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-[10px] bg-white cursor-pointer hover:border-blue-200 outline-none"
       >
         <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
-          <Typography type="body" size="custom-15" weight="normal" color="blue-200">
+          <Typography
+            type="body"
+            size="custom-15"
+            weight="normal"
+            color="blue-200"
+          >
             {formatDateDisplay(selectedDate)}
           </Typography>
         </span>
@@ -60,7 +65,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         </span>
 
         <span className={`${showCalendar ? '-rotate-90' : 'rotate-90'}`}>
-          <Image src="/chevron-right.svg" alt="Toggle calendar" className="!h-3 !w-3" />
+          <Image
+            src="/chevron-right.svg"
+            alt="Toggle calendar"
+            className="!h-3 !w-3"
+          />
         </span>
       </button>
 
@@ -76,21 +85,47 @@ export const DatePicker: React.FC<DatePickerProps> = ({
               className="p-1 rotate-180"
               aria-label="Previous Month"
             >
-              <Image src="/chevron-right.svg" alt="Previous Month" className="!h-3 !w-3" />
+              <Image
+                src="/chevron-right.svg"
+                alt="Previous Month"
+                className="!h-3 !w-3"
+              />
             </button>
 
-            <Typography type="body" size="md" weight="semibold" color="blue-200">
-              {getMonthYear(new Date(displayedYear, displayedMonth).toISOString())}
+            <Typography
+              type="body"
+              size="md"
+              weight="semibold"
+              color="blue-200"
+            >
+              {getMonthYear(
+                new Date(displayedYear, displayedMonth).toISOString(),
+              )}
             </Typography>
 
-            <button type="button" onClick={handleNextMonth} className="p-1" aria-label="Next Month">
-              <Image src="/chevron-right.svg" alt="Next Month" className="!h-3 !w-3" />
+            <button
+              type="button"
+              onClick={handleNextMonth}
+              className="p-1"
+              aria-label="Next Month"
+            >
+              <Image
+                src="/chevron-right.svg"
+                alt="Next Month"
+                className="!h-3 !w-3"
+              />
             </button>
           </div>
 
           <div className="grid grid-cols-7 gap-1 text-center text-xs font-bold p-4">
             {weekdays.map((day) => (
-              <Typography key={day} type="body" size="xs" weight="normal" color="blue-200">
+              <Typography
+                key={day}
+                type="body"
+                size="xs"
+                weight="normal"
+                color="blue-200"
+              >
                 {day}
               </Typography>
             ))}

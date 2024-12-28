@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import { BalanceRecord } from '@/services/get-balance-history'
+import { BalanceRecord } from '@/services/get-balance-history';
 import {
   XAxis,
   YAxis,
@@ -9,20 +9,17 @@ import {
   ResponsiveContainer,
   AreaChart,
   Area,
-} from 'recharts'
-import { XAxisTick, YAxisTick } from '../axis-tick'
+} from 'recharts';
+import { XAxisTick, YAxisTick } from '../axis-tick';
 
 type Props = {
-  balanceHistory: BalanceRecord[]
-}
-
+  balanceHistory: BalanceRecord[];
+};
 
 const CustomXAxisTick = ({ x, y, payload }: any) => {
   const { value, index } = payload;
   if (index === 7) return null;
-  return (
-    <XAxisTick x={x} y={y} value={value} textAnchor="start" />
-  );
+  return <XAxisTick x={x} y={y} value={value} textAnchor="start" />;
 };
 
 const CustomYAxisTick = ({ x, y, payload }: any) => (
@@ -30,9 +27,8 @@ const CustomYAxisTick = ({ x, y, payload }: any) => (
 );
 
 export default function BalanceHistoryChart({ balanceHistory }: Props) {
-
   return (
-    <div className='h-[275px] w-full'>
+    <div className="h-[275px] w-full">
       <ResponsiveContainer>
         <AreaChart data={balanceHistory.slice(0, 8)}>
           <defs>
@@ -46,10 +42,15 @@ export default function BalanceHistoryChart({ balanceHistory }: Props) {
           <XAxis dataKey="month" tick={<CustomXAxisTick />} />
           <YAxis tick={<CustomYAxisTick />} />
           <Tooltip />
-          <Area type="monotone" dataKey="balance" stroke="#1814F3"
-            fill="url(#colorBalance)" strokeWidth={3} />
+          <Area
+            type="monotone"
+            dataKey="balance"
+            stroke="#1814F3"
+            fill="url(#colorBalance)"
+            strokeWidth={3}
+          />
         </AreaChart>
       </ResponsiveContainer>
     </div>
-  )
+  );
 }

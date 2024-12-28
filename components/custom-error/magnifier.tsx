@@ -9,7 +9,7 @@ export const Magnifier = () => (
   >
     <g filter="url(#filter)">
       <circle
-        fillOpacity="0.40" 
+        fillOpacity="0.40"
         cx="147.5"
         cy="129.526"
         r="96"
@@ -83,7 +83,12 @@ export const Magnifier = () => (
         <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feGaussianBlur in="BackgroundImageFix" stdDeviation="37.5" />
         <feComposite in2="SourceAlpha" operator="in" result="feBlend" />
-        <feBlend mode="normal" in="SourceGraphic" in2="feBlend" result="shape" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="feBlend"
+          result="shape"
+        />
       </filter>
 
       <linearGradient
@@ -144,7 +149,7 @@ export const Magnifier = () => (
         gradientUnits="userSpaceOnUse"
         gradientTransform="translate(146 129.5) rotate(90) scale(97.5)"
       >
-        <stop stopColor="#D9D9D9" stopOpacity="0.25" offset="0.09375" /> 
+        <stop stopColor="#D9D9D9" stopOpacity="0.25" offset="0.09375" />
         <stop stopColor="#D9D9D9" stopOpacity="0" offset="0.817708" />
       </radialGradient>
     </defs>

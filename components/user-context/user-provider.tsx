@@ -22,9 +22,10 @@ interface UserProviderProps {
   value: Profile | null;
 }
 
-
-
-export const UserProvider: React.FC<UserProviderProps> = ({ children, value }) => {
+export const UserProvider: React.FC<UserProviderProps> = ({
+  children,
+  value,
+}) => {
   const [profile, setProfile] = useState<Profile | null>(value);
   const updateProfile = async (profile: Profile, password?: string) => {
     const result = await fetch('/api/profile', {
@@ -37,7 +38,11 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children, value }) =
     if (result.ok) {
       setProfile(profile);
     }
-  }
+  };
 
-  return <UserContext.Provider value={{ profile, updateProfile }}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={{ profile, updateProfile }}>
+      {children}
+    </UserContext.Provider>
+  );
 };

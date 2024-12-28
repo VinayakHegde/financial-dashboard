@@ -1,9 +1,8 @@
-
 export type ItemType = {
-  title: string,
-  icon: string,
-  href: string,
-  enabled?: boolean,
+  title: string;
+  icon: string;
+  href: string;
+  enabled?: boolean;
 };
 
 export const items: ItemType[] = [

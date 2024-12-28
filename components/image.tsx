@@ -1,4 +1,3 @@
-
 type ImageProps = {
   isAvatar?: boolean;
   src: string;
@@ -21,5 +20,5 @@ export const Image = ({ isAvatar, ...props }: ImageProps) => {
       className={`w-6 h-6 ${props.className}`}
       loading="lazy"
     />
-  )
-}
+  );
+};
