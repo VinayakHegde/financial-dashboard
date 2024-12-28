@@ -24,14 +24,14 @@ export const TransferTo = ({ contact }: Props) => {
         height="50px"
       />
       <div className="flex gap-1 flex-col items-center">
-        <Typography type="body" size="md" weight="normal" color="gray-1000">
+        <Typography type="body" size="md" weight="normal" color="dark-gray">
           {contact.name}
         </Typography>
         <Typography
           type="body"
           size="custom-15"
           weight="normal"
-          color="blue-200"
+          color="steel-blue"
         >
           {contact.role}
         </Typography>

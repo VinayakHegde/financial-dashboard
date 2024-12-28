@@ -24,12 +24,12 @@ type BodyProps = {
     | 'custom-25';
   weight?: 'normal' | 'medium' | 'semibold' | 'bold' | 'x-bold';
   color?:
-    | 'blue-300'
-    | 'blue-200'
-    | 'blue-100'
-    | 'gray-300'
-    | 'gray-500'
-    | 'gray-1000'
+    | 'navy-blue'
+    | 'steel-blue'
+    | 'sky-blue'
+    | 'medium-gray'
+    | 'ghost-white'
+    | 'dark-gray'
     | 'inherit';
   uppercase?: boolean;
 };
@@ -82,22 +82,22 @@ const getFontWeight = (weight: BodyProps['weight']) => {
 
 const getTextColor = (color: BodyProps['color']) => {
   switch (color) {
-    case 'gray-300':
-      return 'text-gray-300';
-    case 'blue-200':
-      return 'text-blue-200';
-    case 'blue-100':
-      return 'text-blue-100';
-    case 'gray-300':
-      return 'text-gray-300';
-    case 'gray-500':
-      return 'text-gray-500';
-    case 'gray-1000':
-      return 'text-gray-1000';
+    case 'medium-gray':
+      return 'text-medium-gray';
+    case 'steel-blue':
+      return 'text-steel-blue';
+    case 'sky-blue':
+      return 'text-sky-blue';
+    case 'medium-gray':
+      return 'text-medium-gray';
+    case 'ghost-white':
+      return 'text-ghost-white';
+    case 'dark-gray':
+      return 'text-dark-gray';
     case 'inherit':
       return 'text-inherit';
     default:
-      return 'text-blue-300';
+      return 'text-navy-blue';
   }
 };
 const Body = ({
@@ -105,7 +105,7 @@ const Body = ({
   size = 'sm',
   isSecondaryFont = false,
   weight = 'semibold',
-  color = 'blue-300',
+  color = 'navy-blue',
   uppercase,
 }: BodyProps) => {
   return (
@@ -125,13 +125,13 @@ type HeadingProps = {
 const Heading = (props: HeadingProps) => {
   if (props.type === 'heading-1') {
     return (
-      <h1 className="text-28 text-blue-300 font-primary font-semibold">
+      <h1 className="text-28 text-navy-blue font-primary font-semibold">
         {props.children}
       </h1>
     );
   }
   return (
-    <h2 className="text-22 text-blue-300 font-primary font-semibold">
+    <h2 className="text-22 text-navy-blue font-primary font-semibold">
       {props.children}
     </h2>
   );

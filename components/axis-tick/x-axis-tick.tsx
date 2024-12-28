@@ -13,7 +13,7 @@ export const XAxisTick = ({
     x={x}
     y={y + 15}
     textAnchor={textAnchor}
-    className="fill-blue-200 text-sm font-normal font-primary"
+    className="fill-steel-blue text-sm font-normal font-primary"
   >
     {value}
   </text>

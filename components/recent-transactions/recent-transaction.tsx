@@ -16,10 +16,10 @@ const getTextColor = (type: Transaction['type']) => {
 };
 
 const getBackgroundColor = (logo?: Transaction['logo']) => {
-  if (logo === 'cards') return 'bg-warning-100 p-4';
-  if (logo === 'paypal') return 'bg-info-100 p-4';
-  if (logo === 'dollar') return 'bg-success-100 p-4';
-  return 'bg-gray-500 p-8';
+  if (logo === 'cards') return 'bg-light-warning p-4';
+  if (logo === 'paypal') return 'bg-light-info p-4';
+  if (logo === 'dollar') return 'bg-light-success p-4';
+  return 'bg-ghost-white p-8';
 };
 
 export const RecentTransaction = ({ transaction }: Props) => {
@@ -33,14 +33,14 @@ export const RecentTransaction = ({ transaction }: Props) => {
         )}
       </div>
       <div className="flex flex-1 flex-col gap-1">
-        <Typography type="body" size="md" weight="medium" color="gray-1000">
+        <Typography type="body" size="md" weight="medium" color="dark-gray">
           {transaction.description}
         </Typography>
         <Typography
           type="body"
           size="custom-15"
           weight="normal"
-          color="blue-200"
+          color="steel-blue"
         >
           {toLocaleDate(transaction.date)}
         </Typography>

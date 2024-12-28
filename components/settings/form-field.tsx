@@ -27,7 +27,7 @@ export const FormField = ({
       type={type}
       id={id}
       {...register(id)}
-      className={`w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-10 bg-white cursor-pointer hover:border-blue-200 text-blue-200 text-sm desktop:text-15 outline-none ${errors[id] ? 'border-danger' : ''}`}
+      className={`w-full px-4 h-10 desktop:h-[50px] border border-pale-blue rounded-10 bg-white cursor-pointer hover:border-steel-blue text-steel-blue text-sm desktop:text-15 outline-none ${errors[id] ? 'border-danger' : ''}`}
       placeholder={placeholder}
     />
     {errors[id] && (
@@ -44,7 +44,7 @@ export const FormFieldWrapper = ({ id, label, children }: WrapperProps) => (
   <div className="flex flex-col gap-2 desktop:gap-3">
     <label htmlFor={id}>
       <span className="hidden desktop:inline-block">
-        <Typography type="body" size="md" color="gray-1000" weight="normal">
+        <Typography type="body" size="md" color="dark-gray" weight="normal">
           {label}
         </Typography>
       </span>
@@ -53,7 +53,7 @@ export const FormFieldWrapper = ({ id, label, children }: WrapperProps) => (
         <Typography
           type="body"
           size="custom-13"
-          color="gray-1000"
+          color="dark-gray"
           weight="normal"
         >
           {label}

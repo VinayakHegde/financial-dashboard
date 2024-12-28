@@ -50,8 +50,8 @@ const CustomTooltip = (props: any) => {
   };
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white border border-gray-300 rounded-10 shadow-md flex flex-col gap-2 pb-2 ">
-        <div className="bg-gray-100 border-b border-b-blue-200 p-2 rounded-t-10">
+      <div className="bg-white border border-medium-gray rounded-10 shadow-md flex flex-col gap-2 pb-2 ">
+        <div className="bg-gray-100 border-b border-b-steel-blue p-2 rounded-t-10">
           <Typography type="body" weight="semibold" size="md">
             {label}
           </Typography>
@@ -59,7 +59,7 @@ const CustomTooltip = (props: any) => {
         {payload.map((entry, index: number) => (
           <div
             key={`item-${index}`}
-            className={`px-2 flex items-center ${entry.name === 'deposit' ? 'text-info' : 'text-gray-1000'}`}
+            className={`px-2 flex items-center ${entry.name === 'deposit' ? 'text-info' : 'text-dark-gray'}`}
           >
             <Typography
               type="body"
@@ -86,13 +86,13 @@ const CustomLegend = (props: any) => {
       {payload.map((entry, index: number) => (
         <div key={index} className="flex items-center gap-2 capitalize">
           <div
-            className={`w-4 h-4 rounded-full ${entry.value === 'withdrawal' ? 'bg-gray-1000' : 'bg-info'}`}
+            className={`w-4 h-4 rounded-full ${entry.value === 'withdrawal' ? 'bg-dark-gray' : 'bg-info'}`}
           />
           <Typography
             type="body"
             weight="normal"
             size="custom-15"
-            color="blue-200"
+            color="steel-blue"
           >
             {entry.value}
           </Typography>
@@ -130,7 +130,7 @@ export const WeeklyActivityChart = ({
           />
           <Bar
             dataKey="withdrawal"
-            shape={<RoundedBar className="fill-gray-1000" />}
+            shape={<RoundedBar className="fill-dark-gray" />}
           />
           <Bar dataKey="deposit" shape={<RoundedBar className="fill-info" />} />
         </BarChart>

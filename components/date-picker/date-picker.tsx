@@ -46,20 +46,20 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           ev.stopPropagation();
           toggleCalendar();
         }}
-        className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-10 bg-white cursor-pointer hover:border-blue-200 outline-none"
+        className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-pale-blue rounded-10 bg-white cursor-pointer hover:border-steel-blue outline-none"
       >
         <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
           <Typography
             type="body"
             size="custom-15"
             weight="normal"
-            color="blue-200"
+            color="steel-blue"
           >
             {formatDateDisplay(selectedDate)}
           </Typography>
         </span>
         <span className="desktop:hidden">
-          <Typography type="body" size="sm" weight="normal" color="blue-200">
+          <Typography type="body" size="sm" weight="normal" color="steel-blue">
             {formatDateDisplay(selectedDate)}
           </Typography>
         </span>
@@ -76,9 +76,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       {showCalendar && (
         <div
           ref={calendarRef}
-          className="absolute z-10 w-64 bg-white border border-gray-200 shadow-xl rounded mt-1"
+          className="absolute z-10 w-64 bg-white border border-ivory-gray shadow-xl rounded mt-1"
         >
-          <div className="flex items-center justify-between border-b border-gray-200 p-4">
+          <div className="flex items-center justify-between border-b border-ivory-gray p-4">
             <button
               type="button"
               onClick={handlePrevMonth}
@@ -96,7 +96,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
               type="body"
               size="md"
               weight="semibold"
-              color="blue-200"
+              color="steel-blue"
             >
               {getMonthYear(
                 new Date(displayedYear, displayedMonth).toISOString(),
@@ -124,7 +124,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                 type="body"
                 size="xs"
                 weight="normal"
-                color="blue-200"
+                color="steel-blue"
               >
                 {day}
               </Typography>
@@ -150,7 +150,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                   type="button"
                   className={`
                     h-8 w-8 rounded-full 
-                    hover:bg-success-100 hover:text-gray-1000 transition-colors 
+                    hover:bg-light-success hover:text-dark-gray transition-colors 
                     ${isSelected ? 'bg-success' : ''}
                   `}
                   onClick={() => handleSelectDate(dayNumber)}
@@ -159,7 +159,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                     type="body"
                     size="xs"
                     weight={isSelected ? 'semibold' : 'normal'}
-                    color={isSelected ? 'gray-1000' : 'blue-200'}
+                    color={isSelected ? 'dark-gray' : 'steel-blue'}
                   >
                     {`${dayNumber}`}
                   </Typography>

@@ -1,4 +1,3 @@
-// eslint.config.mjs
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -11,16 +10,14 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  'plugin:prettier/recommended',
-  {
-    plugins: ['prettier'],
-  },
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:prettier/recommended',
+  ),
   {
     rules: {
       'prettier/prettier': 'error',
-      // "no-console": "warn",
-      // "react/react-in-jsx-scope": "off",
     },
   },
 ];
