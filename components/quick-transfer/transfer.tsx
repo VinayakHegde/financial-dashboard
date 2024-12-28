@@ -16,7 +16,7 @@ export const Transfer = ({ amount }: Props) => {
           type="number"
           placeholder={amount.toFixed(2)}
         />
-        <button className="bg-dark-gray h-[50px] text-white rounded-50 px-6 flex gap-2 items-center min-w-[100px] desktop:min-w-[125px]">
+        <button className="bg-dark-gray h-50px text-white rounded-50 px-6 flex gap-2 items-center min-w-[100px] desktop:min-w-[125px]">
           <div className="hidden desktop:flex items-center gap-2">
             <Typography type="body" size="md" weight="medium" color="inherit">
               Send
