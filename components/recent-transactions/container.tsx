@@ -9,7 +9,7 @@ type Props = {
 };
 export const RecentTransactions = (props: Props) => {
   return (
-    <Section title="Recent Transactions" className="desktop:!w-[350px]">
+    <Section title="Recent Transactions" className="desktop:!w-350px">
       <div className="flex flex-col gap-2 desktop:max-h-235px">
         {props.transactions.slice(0, 3).map((transaction, index) => (
           <RecentTransaction key={index} transaction={transaction} />

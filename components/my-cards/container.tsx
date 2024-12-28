@@ -12,7 +12,7 @@ export const MyCards = ({ cards }: { cards: CardType[] }) => {
         label: 'View all',
       }}
       transparent
-      className="desktop:!w-[730px]"
+      className="desktop:!w-730px"
     >
       <div className="flex gap-8 overflow-x-auto px-6 py-2 desktop:p-0">
         {cards.slice(0, 2).map((card) => (

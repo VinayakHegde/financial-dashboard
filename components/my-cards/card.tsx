@@ -18,7 +18,7 @@ export const Card = (props: CardType) => {
   const isCreditCard = props.category === 'credit';
   return (
     <div
-      className={`border rounded-25 min-w-[265px] desktop:min-w-[350px] min-h-170px desktop:min-h-235px ${isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-pale-blue'}  flex flex-col justify-between`}
+      className={`border rounded-25 min-w-265px desktop:min-w-350px min-h-170px desktop:min-h-235px ${isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-pale-blue'}  flex flex-col justify-between`}
     >
       <div className="px-8 pt-6 flex flex-col gap-4 desktop:gap-6">
         <div className="flex justify-between items-center">
@@ -186,7 +186,7 @@ export const Card = (props: CardType) => {
         <Image
           src={`/card-vendor-${isCreditCard ? 'light' : 'dark'}.svg`}
           alt="Card Vendor"
-          className="desktop:!w-[44px] desktop:!h-30px !w-[27px] !h-18px"
+          className="desktop:!w-11 desktop:!h-30px !w-27px !h-18px"
         />
       </div>
     </div>

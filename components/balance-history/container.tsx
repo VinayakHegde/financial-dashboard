@@ -8,7 +8,7 @@ export const BalanceHistory = (
   props: ComponentProps<typeof BalanceHistoryChart>,
 ) => {
   return (
-    <Section title="Balance History" className="desktop:!w-[635px]">
+    <Section title="Balance History" className="desktop:!w-635px">
       <BalanceHistoryChart {...props} />
     </Section>
   );

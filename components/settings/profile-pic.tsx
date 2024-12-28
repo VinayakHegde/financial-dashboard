@@ -31,7 +31,7 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
   };
 
   return (
-    <div className="relative inline-block w-[100px] h-100px desktop:w-[90px] desktop:h-90px overflow-hidden">
+    <div className="relative inline-block w-100px h-100px desktop:w-90px desktop:h-90px overflow-hidden">
       <Image
         isAvatar
         src={preview ?? appUser(100)}
@@ -57,7 +57,7 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
         <Image
           src="/pencil.svg"
           alt="Upload profile picture"
-          className="!h-30px !w-[30px]"
+          className="!h-30px !w-30px"
         />
       </button>
 

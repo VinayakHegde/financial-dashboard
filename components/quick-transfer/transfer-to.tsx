@@ -19,7 +19,7 @@ export const TransferTo = ({ contact }: Props) => {
         isAvatar
         src={`/${contact.avatar}-50x50.jpg`}
         alt={contact.name}
-        className="desktop:hidden h-50px w-[50px]"
+        className="desktop:hidden h-50px w-50px"
         width="50px"
         height="50px"
       />
