@@ -11,7 +11,7 @@ type CustomErrorProps = {
 const ReturnHome = () => (
   <Link
     href="/"
-    className="flex items-center justify-center bg-gray-1000 text-white px-4 h-10 rounded-[10px]"
+    className="flex items-center justify-center bg-gray-1000 text-white px-4 h-10 rounded-10"
   >
     Return to Dashboard
   </Link>

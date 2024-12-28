@@ -128,7 +128,7 @@ export const EditProfile = () => {
           disabled={!isDirty || !isValid || isSubmitting}
           type="submit"
           form="profile-form"
-          className="bg-gray-1000 text-white px-4 py-2 rounded-[9px] desktop:rounded-[15px] w-full max-h-40 desktop:w-[190px] desktop:h-[50px] disabled:opacity-50"
+          className="bg-gray-1000 text-white px-4 py-2 rounded-10 desktop:rounded-15 w-full max-h-40 desktop:w-[190px] desktop:h-[50px] disabled:opacity-50"
         >
           Save
         </button>

@@ -22,7 +22,7 @@ export const Section = ({
   const element = transparent ? (
     children
   ) : (
-    <div className="flex flex-col gap-6 overflow-x-auto px-6 py-2 desktop:p-7 desktop:rounded-[25px] desktop:bg-white">
+    <div className="flex flex-col gap-6 overflow-x-auto px-6 py-2 desktop:p-7 desktop:rounded-25 desktop:bg-white">
       {children}
     </div>
   );

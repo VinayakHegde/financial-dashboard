@@ -61,6 +61,12 @@ export default {
         'dark-card-number':
           'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)',
       },
+      borderRadius: {
+        10: '10px',
+        15: '15px',
+        25: '25px',
+        50: '50px',
+      },
     },
   },
   plugins: [],

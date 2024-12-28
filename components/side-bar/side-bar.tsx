@@ -46,7 +46,7 @@ const Item = ({ icon, title, href, enabled }: ItemType) => {
     <button
       onClick={handleClick}
       aria-disabled={!enabled}
-      className={`flex items-center gap-8 p-4 pl-8 capitalize ${enabled ? 'hover:bg-gray-100' : 'cursor-not-allowed pointer-events-none'} relative ${pathname === href ? 'before:content[" "] before:h-full before:w-3 before:bg-gray-1000 before:absolute before:-left-1 before:rounded-r-[10px]' : ''}`}
+      className={`flex items-center gap-8 p-4 pl-8 capitalize ${enabled ? 'hover:bg-gray-100' : 'cursor-not-allowed pointer-events-none'} relative ${pathname === href ? 'before:content[" "] before:h-full before:w-3 before:bg-gray-1000 before:absolute before:-left-1 before:rounded-r-10' : ''}`}
     >
       <Image
         src={`/${icon}${pathname === href ? '-dark' : ''}.svg`}
