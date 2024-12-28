@@ -50,8 +50,8 @@ const CustomTooltip = (props: any) => {
   };
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white border border-gray-300 rounded-md shadow-md flex flex-col gap-2 pb-2 ">
-        <div className="bg-gray-100 border-b border-b-blue-200 p-2">
+      <div className="bg-white border border-gray-300 rounded-10 shadow-md flex flex-col gap-2 pb-2 ">
+        <div className="bg-gray-100 border-b border-b-blue-200 p-2 rounded-t-10">
           <Typography type="body" weight="semibold" size="md">
             {label}
           </Typography>

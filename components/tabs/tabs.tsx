@@ -43,7 +43,7 @@ export const Tabs = ({ children, className = '' }: TabsProps) => {
     const baseClasses =
       'relative p-2 desktop:px-4 desktop:py-2 text-xs desktop:text-md font-medium transition-colors font-primary disabled:text-blue-200 disabled:cursor-not-allowed hover:text-gray-700';
     const activeClasses =
-      'text-gray-1000 before:h-1 before:bg-gray-1000 before:w-full before:absolute before:bottom-0 before:left-0 before:transition-all before:duration-300 before:ease-in-out before:rounded-t-[10px]';
+      'text-gray-1000 before:h-1 before:bg-gray-1000 before:w-full before:absolute before:bottom-0 before:left-0 before:transition-all before:duration-300 before:ease-in-out before:rounded-t-10';
 
     return (
       <button

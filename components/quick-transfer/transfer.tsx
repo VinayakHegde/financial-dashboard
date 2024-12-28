@@ -10,13 +10,13 @@ export const Transfer = ({ amount }: Props) => {
       <Typography type="body" size="md" weight="normal" color="blue-200">
         Write Amount
       </Typography>
-      <div className="flex desktop:w-[265px] bg-gray-500 rounded-[50px] items-center">
+      <div className="flex desktop:w-[265px] bg-gray-500 rounded-50 items-center">
         <input
-          className="flex-1 flex desktop:w-[140px] h-full bg-transparent rounded-l-[50px] indent-8 text-blue-200 outline-none"
+          className="flex-1 flex desktop:w-[140px] h-full bg-transparent rounded-l-50 indent-8 text-blue-200 outline-none"
           type="number"
           placeholder={amount.toFixed(2)}
         />
-        <button className="bg-gray-1000 h-[50px] text-white rounded-[50px] px-6 flex gap-2 items-center min-w-[100px] desktop:min-w-[125px]">
+        <button className="bg-gray-1000 h-[50px] text-white rounded-50 px-6 flex gap-2 items-center min-w-[100px] desktop:min-w-[125px]">
           <div className="hidden desktop:flex items-center gap-2">
             <Typography type="body" size="md" weight="medium" color="inherit">
               Send

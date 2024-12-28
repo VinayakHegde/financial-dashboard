@@ -46,7 +46,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           ev.stopPropagation();
           toggleCalendar();
         }}
-        className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-[10px] bg-white cursor-pointer hover:border-blue-200 outline-none"
+        className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-10 bg-white cursor-pointer hover:border-blue-200 outline-none"
       >
         <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
           <Typography
