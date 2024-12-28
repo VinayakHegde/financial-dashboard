@@ -16,13 +16,13 @@ type Props = {
   balanceHistory: BalanceRecord[];
 };
 
-const CustomXAxisTick = ({ x, y, payload }: any) => {
+const CustomXAxisTick = ({ x, y, payload }: IGeneric.UnknownProps) => {
   const { value, index } = payload;
   if (index === 7) return null;
   return <XAxisTick x={x} y={y} value={value} textAnchor="start" />;
 };
 
-const CustomYAxisTick = ({ x, y, payload }: any) => (
+const CustomYAxisTick = ({ x, y, payload }: IGeneric.UnknownProps) => (
   <YAxisTick x={x} y={y} value={payload.value} />
 );
 

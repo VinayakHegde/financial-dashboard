@@ -11,7 +11,7 @@ export type Activity = {
 export const getActiviries = async () => {
   const response = await GET();
   return toCanonical<Activity[]>(
-    (await response.json()).map((activity: any) => ({
+    (await response.json()).map((activity: IGeneric.UnknownProps) => ({
       ...activity,
       date: getWeekday(activity.date),
     })),

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { Activity } from '@/services/get-activities';
@@ -16,7 +15,7 @@ import {
 import { Typography } from '../typography';
 import { XAxisTick, YAxisTick } from '../axis-tick';
 
-const RoundedBar = (props: any) => {
+const RoundedBar = (props: IGeneric.UnknownProps) => {
   const { x, y, height, className } = props;
   return (
     <>
@@ -42,7 +41,7 @@ const RoundedBar = (props: any) => {
   );
 };
 
-const CustomTooltip = (props: any) => {
+const CustomTooltip = (props: IGeneric.UnknownProps) => {
   const { active, payload, label } = props as {
     active?: boolean;
     payload: { name: string; value: string }[];
@@ -79,7 +78,7 @@ const CustomTooltip = (props: any) => {
   return null;
 };
 
-const CustomLegend = (props: any) => {
+const CustomLegend = (props: IGeneric.UnknownProps) => {
   const { payload } = props as { payload: { value: string }[] };
   return (
     <div className="flex flex-row-reverse gap-4 justify-start items-center pb-5">
@@ -102,11 +101,13 @@ const CustomLegend = (props: any) => {
   );
 };
 
-const CustomXAxisTick = ({ x, y, payload: { value } }: any) => (
-  <XAxisTick x={x} y={y} value={value} />
-);
+const CustomXAxisTick = ({
+  x,
+  y,
+  payload: { value },
+}: IGeneric.UnknownProps) => <XAxisTick x={x} y={y} value={value} />;
 
-const CustomYAxisTick = ({ x, y, payload }: any) => (
+const CustomYAxisTick = ({ x, y, payload }: IGeneric.UnknownProps) => (
   <YAxisTick x={x} y={y} value={payload.value} />
 );
 export const WeeklyActivityChart = ({

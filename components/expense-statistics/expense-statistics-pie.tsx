@@ -10,7 +10,7 @@ type Props = {
 const FILLS = ['fill-orange', 'fill-navy-blue', 'fill-info', 'fill-dark-gray'];
 
 const RADIAN = Math.PI / 180;
-const CustomizedLabel = (props: any) => {
+const CustomizedLabel = (props: IGeneric.UnknownProps) => {
   const { cx, cy, midAngle, innerRadius, outerRadius, percent, payload } =
     props;
   const radius = innerRadius + (outerRadius - innerRadius) * 0.6;
