@@ -27,7 +27,7 @@ export const FormField = ({
       type={type}
       id={id}
       {...register(id)}
-      className={`w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-10 bg-white cursor-pointer hover:border-blue-200 text-blue-200 text-sm desktop:text-custom-15 outline-none ${errors[id] ? 'border-danger' : ''}`}
+      className={`w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-10 bg-white cursor-pointer hover:border-blue-200 text-blue-200 text-sm desktop:text-15 outline-none ${errors[id] ? 'border-danger' : ''}`}
       placeholder={placeholder}
     />
     {errors[id] && (
