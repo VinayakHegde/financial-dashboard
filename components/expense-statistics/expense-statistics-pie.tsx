@@ -1,7 +1,7 @@
 "use client"
 
 import { Expense } from '@/services/get-expenses'
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 
 type Props = {
   expenses: Expense[]
@@ -40,7 +40,6 @@ const CustomizedLabel = (props: any) => {
 };
 
 export const ExpenseStatisticsPie = ({ expenses }: Props) => {
-  console.log(expenses)
   return (
     <div className='h-[275px] desktop:h-[325px] w-full'>
       <ResponsiveContainer>
@@ -62,7 +61,6 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
               <Cell key={`cell-${idx}`} className={FILLS[idx % FILLS.length]} />
             ))}
           </Pie>
-          <Tooltip />
         </PieChart>
       </ResponsiveContainer>
     </div>

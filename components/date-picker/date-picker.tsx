@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useDatePicker } from '@/hooks/use-date-picker';
 import { getMonthYear, toLocaleDate } from '@/utils/date';
 import { Image } from '../image';
 import { Typography } from '../typography';
@@ -16,66 +16,20 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   onChange,
   placeholder = 'Select Date',
 }) => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(
-    value ?? new Date()
-  );
-
-  const [showCalendar, setShowCalendar] = useState(false);
-
-  const currentDate = selectedDate ?? new Date();
-  const [displayedMonth, setDisplayedMonth] = useState(currentDate.getMonth());
-  const [displayedYear, setDisplayedYear] = useState(currentDate.getFullYear());
-
-  const calendarRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (calendarRef.current && !calendarRef.current.contains(e.target as Node)) {
-        setShowCalendar(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const toggleCalendar = () => {
-    if (!showCalendar && selectedDate) {
-      setDisplayedMonth(selectedDate.getMonth());
-      setDisplayedYear(selectedDate.getFullYear());
-    }
-    setShowCalendar((prev) => !prev);
-  };
+  const {
+    selectedDate,
+    showCalendar,
+    toggleCalendar,
+    handleSelectDate,
+    handlePrevMonth,
+    handleNextMonth,
+    displayedMonth,
+    displayedYear,
+    calendarRef,
+  } = useDatePicker({ initialValue: value, onChange });
 
   const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
   const firstDayOfMonth = new Date(displayedYear, displayedMonth, 1).getDay();
-
-  const selectDate = (day: number) => {
-    const newDate = new Date(displayedYear, displayedMonth, day);
-    setSelectedDate(newDate);
-    setShowCalendar(false);
-    onChange?.(newDate);
-  };
-
-  const prevMonth = () => {
-    let newMonth = displayedMonth - 1;
-    let newYear = displayedYear;
-    if (newMonth < 0) {
-      newMonth = 11;
-      newYear -= 1;
-    }
-    setDisplayedMonth(newMonth);
-    setDisplayedYear(newYear);
-  };
-
-  const nextMonth = () => {
-    let newMonth = displayedMonth + 1;
-    let newYear = displayedYear;
-    if (newMonth > 11) {
-      newMonth = 0;
-      newYear += 1;
-    }
-    setDisplayedMonth(newMonth);
-    setDisplayedYear(newYear);
-  };
 
   const formatDateDisplay = (date: Date | null) => {
     if (!date) return placeholder;
@@ -87,6 +41,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   return (
     <div className="relative inline-block w-full">
       <button
+        type="button"
         onClick={(ev) => {
           ev.stopPropagation();
           toggleCalendar();
@@ -94,12 +49,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-[50px] border border-blue-50 rounded-[10px] bg-white cursor-pointer hover:border-blue-200 outline-none"
       >
         <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
-          <Typography
-            type="body"
-            size="custom-15"
-            weight="normal"
-            color="blue-200"
-          >
+          <Typography type="body" size="custom-15" weight="normal" color="blue-200">
             {formatDateDisplay(selectedDate)}
           </Typography>
         </span>
@@ -110,61 +60,37 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         </span>
 
         <span className={`${showCalendar ? '-rotate-90' : 'rotate-90'}`}>
-          <Image
-            src="/chevron-right.svg"
-            alt="Open calendar"
-            className="!h-3 !w-3"
-          />
+          <Image src="/chevron-right.svg" alt="Toggle calendar" className="!h-3 !w-3" />
         </span>
       </button>
 
       {showCalendar && (
         <div
           ref={calendarRef}
-          className="absolute z-10 w-64 bg-white border border-gray-200 shadow-xl rounded"
+          className="absolute z-10 w-64 bg-white border border-gray-200 shadow-xl rounded mt-1"
         >
           <div className="flex items-center justify-between border-b border-gray-200 p-4">
             <button
-              onClick={prevMonth}
+              type="button"
+              onClick={handlePrevMonth}
               className="p-1 rotate-180"
               aria-label="Previous Month"
             >
-              <Image
-                src="/chevron-right.svg"
-                alt="Previous Month"
-                className="!h-3 !w-3"
-              />
+              <Image src="/chevron-right.svg" alt="Previous Month" className="!h-3 !w-3" />
             </button>
 
-            <Typography
-              type="body"
-              size="md"
-              weight="semibold"
-              color="blue-200"
-            >
-              {getMonthYear(
-                new Date(displayedYear, displayedMonth).toISOString()
-              )}
+            <Typography type="body" size="md" weight="semibold" color="blue-200">
+              {getMonthYear(new Date(displayedYear, displayedMonth).toISOString())}
             </Typography>
 
-            <button onClick={nextMonth} className="p-1" aria-label="Next Month">
-              <Image
-                src="/chevron-right.svg"
-                alt="Next Month"
-                className="!h-3 !w-3"
-              />
+            <button type="button" onClick={handleNextMonth} className="p-1" aria-label="Next Month">
+              <Image src="/chevron-right.svg" alt="Next Month" className="!h-3 !w-3" />
             </button>
           </div>
 
           <div className="grid grid-cols-7 gap-1 text-center text-xs font-bold p-4">
             {weekdays.map((day) => (
-              <Typography
-                key={day}
-                type="body"
-                size="xs"
-                weight="normal"
-                color="blue-200"
-              >
+              <Typography key={day} type="body" size="xs" weight="normal" color="blue-200">
                 {day}
               </Typography>
             ))}
@@ -186,12 +112,13 @@ export const DatePicker: React.FC<DatePickerProps> = ({
               return (
                 <button
                   key={`day-${dayNumber}`}
+                  type="button"
                   className={`
                     h-8 w-8 rounded-full 
                     hover:bg-success-100 hover:text-gray-1000 transition-colors 
                     ${isSelected ? 'bg-success' : ''}
                   `}
-                  onClick={() => selectDate(dayNumber)}
+                  onClick={() => handleSelectDate(dayNumber)}
                 >
                   <Typography
                     type="body"
