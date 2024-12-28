@@ -7,7 +7,7 @@ type Props = {
   expenses: Expense[];
 };
 
-const FILLS = ['fill-orange', 'fill-blue-300', 'fill-info', 'fill-gray-1000'];
+const FILLS = ['fill-orange', 'fill-navy-blue', 'fill-info', 'fill-dark-gray'];
 
 const RADIAN = Math.PI / 180;
 const CustomizedLabel = (props: any) => {

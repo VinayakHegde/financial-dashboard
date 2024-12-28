@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 type ImageProps = {
   isAvatar?: boolean;
   src: string;
@@ -6,18 +7,13 @@ type ImageProps = {
   width?: string;
   height?: string;
 };
-export const Image = ({ isAvatar, ...props }: ImageProps) => {
-  return isAvatar ? (
+export const Image = ({ isAvatar, alt, src, className }: ImageProps) => {
+  const additianalClass = isAvatar ? 'rounded-full' : 'w-6 h-6';
+  return (
     <img
-      {...props}
-      className={`rounded-full ${props.className}`}
-      loading="lazy"
-    />
-  ) : (
-    <img
-      src={props.src}
-      alt={props.alt}
-      className={`w-6 h-6 ${props.className}`}
+      src={src}
+      alt={alt}
+      className={`${additianalClass} ${className}`}
       loading="lazy"
     />
   );

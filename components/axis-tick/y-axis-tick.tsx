@@ -14,7 +14,7 @@ export const YAxisTick = ({
     y={y}
     textAnchor={textAnchor}
     dy={3}
-    className="fill-blue-200 text-sm font-normal font-primary"
+    className="fill-steel-blue text-sm font-normal font-primary"
   >
     {value}
   </text>
