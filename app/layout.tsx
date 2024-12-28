@@ -1,10 +1,11 @@
 import Header from '@/components/header'
-import './globals.css'
+// import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Lato } from 'next/font/google'
 import { SideBar, SidebarProvider } from '@/components/side-bar'
 import { getProfile } from '@/services/get-profile'
 import { UserProvider } from '@/components/user-context/user-provider'
+import 'tailwindcss/tailwind.css'
 
 const inter = Inter({
   subsets: ['latin'],
