@@ -7,6 +7,7 @@ import { Image } from './image'
 import Search from './search'
 import { useUserContext } from './user-context'
 import { appUser } from '@/utils/app-user'
+import { useSidebar } from './side-bar'
 
 const TITLE: Record<string, string> = {
   '/': 'Overview',
@@ -16,19 +17,25 @@ const TITLE: Record<string, string> = {
 export default function Header() {
   const pathname = usePathname();
   const user = useUserContext();
+  const { toggleSidebar } = useSidebar();
   const title = TITLE[pathname];
 
   return (
     <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">
       <div className="min-w-64 hidden desktop:flex border-r border-gray-900 gap-2 items-center p-5 pl-8">
-        <Image src="/task.svg" alt="task" className='!w-[35px] !h-[35px]'/>
+        <Image src="/task.svg" alt="task" className='!w-[35px] !h-[35px]' />
         <Typography type='body' size='custom-25' weight='x-bold'>Soar Task</Typography>
       </div>
 
       <div className='flex flex-1 items-center  justify-between p-5'>
-        <div className="flex items-center overflow-hidden desktop:hidden">
+        <button
+          type="button"
+          onClick={toggleSidebar}
+          className="flex items-center overflow-hidden desktop:hidden"
+          aria-label="Toggle Sidebar"
+        >
           <Image src="/hamburger.svg" alt="hamburger" />
-        </div>
+        </button>
         <Typography type='heading-1'>{title}</Typography>
         <div className="desktop:flex-1 justify-end flex desktop:space-x-4">
           <div className="hidden desktop:block">
