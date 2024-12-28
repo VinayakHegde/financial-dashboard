@@ -28,7 +28,7 @@ const CustomYAxisTick = ({ x, y, payload }: any) => (
 
 export default function BalanceHistoryChart({ balanceHistory }: Props) {
   return (
-    <div className="h-[275px] w-full">
+    <div className="h-275px w-full">
       <ResponsiveContainer>
         <AreaChart data={balanceHistory.slice(0, 8)}>
           <defs>

@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">
       <div className="min-w-64 hidden desktop:flex border-r border-light-blue-gray gap-2 items-center p-5 pl-8">
-        <Image src="/task.svg" alt="task" className="!w-[35px] !h-[35px]" />
+        <Image src="/task.svg" alt="task" className="!w-[35px] !h-35px" />
         <Typography type="body" size="custom-25" weight="x-bold">
           Soar Task
         </Typography>
@@ -64,7 +64,7 @@ export default function Header() {
             src={`${user.profile?.displayPicture ?? appUser(35)}`}
             alt="app-user"
             isAvatar
-            className="desktop:hidden h-[35px] w-[35px]"
+            className="desktop:hidden h-35px w-[35px]"
             width="35px"
             height="35px"
           />

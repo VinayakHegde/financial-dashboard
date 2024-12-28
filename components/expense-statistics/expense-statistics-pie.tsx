@@ -36,7 +36,7 @@ const CustomizedLabel = (props: any) => {
 
 export const ExpenseStatisticsPie = ({ expenses }: Props) => {
   return (
-    <div className="h-[275px] desktop:h-[325px] w-full">
+    <div className="h-275px desktop:h-325px w-full">
       <ResponsiveContainer>
         <PieChart>
           <Pie

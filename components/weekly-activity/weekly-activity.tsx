@@ -115,7 +115,7 @@ export const WeeklyActivityChart = ({
   activities: Activity[];
 }) => {
   return (
-    <div className="h-[254px] desktop:h-[325px] w-full">
+    <div className="h-254px desktop:h-325px w-full">
       <ResponsiveContainer>
         <BarChart data={activities.slice(0, 7)} barGap={-5} maxBarSize={15}>
           <CartesianGrid vertical={false} />

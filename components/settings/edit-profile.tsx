@@ -55,7 +55,7 @@ export const EditProfile = () => {
   return (
     <div className="flex flex-col gap-8 w-full">
       <div className="flex flex-col desktop:flex-row gap-10">
-        <div className="flex items-center justify-center w-full desktop:w-[90px] desktop:h-[90px]">
+        <div className="flex items-center justify-center w-full desktop:w-[90px] desktop:h-90px">
           <ProfilePic
             initialImage={user.profile?.displayPicture ?? null}
             onChange={handleFileSelected}
@@ -128,7 +128,7 @@ export const EditProfile = () => {
           disabled={!isDirty || !isValid || isSubmitting}
           type="submit"
           form="profile-form"
-          className="bg-dark-gray text-white px-4 py-2 rounded-10 desktop:rounded-15 w-full max-h-40 desktop:w-[190px] desktop:h-[50px] disabled:opacity-50"
+          className="bg-dark-gray text-white px-4 py-2 rounded-10 desktop:rounded-15 w-full max-h-40 desktop:w-[190px] desktop:h-50px disabled:opacity-50"
         >
           Save
         </button>

@@ -21,7 +21,7 @@ export const QuickTransfer = ({ contacts }: Props) => {
         <li>
           <Link
             href="/transfer"
-            className="bg-white shadow-[4px_4px_18px_-2px_#E7E4E8CC] flex items-center h-[40px] w-[40px] desktop:h-[50px] desktop:w-[50px] rounded-full overflow-hidden flex items-center justify-center"
+            className="bg-white shadow-[4px_4px_18px_-2px_#E7E4E8CC] flex items-center h-10 w-10 desktop:h-50px desktop:w-[50px] rounded-full overflow-hidden flex items-center justify-center"
           >
             <Image
               src="/chevron-right.svg"
