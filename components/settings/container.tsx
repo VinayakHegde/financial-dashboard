@@ -1,8 +1,7 @@
-"use client"
+'use client';
 
-import { Tabs } from '../tabs'
-import { EditProfile } from './edit-profile'
-
+import { Tabs } from '../tabs';
+import { EditProfile } from './edit-profile';
 
 export const Settings = () => {
   return (
@@ -18,6 +17,5 @@ export const Settings = () => {
         </Tabs>
       </div>
     </section>
-  )
-}
-
+  );
+};

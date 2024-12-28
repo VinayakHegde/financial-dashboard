@@ -9,7 +9,9 @@ export const useDatePicker = ({
   initialValue,
   onChange,
 }: UseDatePickerProps) => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(initialValue ?? new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    initialValue ?? new Date(),
+  );
   const [showCalendar, setShowCalendar] = useState(false);
 
   const currentDate = selectedDate ?? new Date();
@@ -20,7 +22,10 @@ export const useDatePicker = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (calendarRef.current && !calendarRef.current.contains(e.target as Node)) {
+      if (
+        calendarRef.current &&
+        !calendarRef.current.contains(e.target as Node)
+      ) {
         setShowCalendar(false);
       }
     };
@@ -63,7 +68,7 @@ export const useDatePicker = ({
       setShowCalendar(false);
       onChange?.(newDate);
     },
-    [displayedMonth, displayedYear, onChange]
+    [displayedMonth, displayedYear, onChange],
   );
 
   return {

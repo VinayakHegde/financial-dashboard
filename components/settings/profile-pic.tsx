@@ -54,7 +54,11 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
         "
         aria-label="Upload profile picture"
       >
-        <Image src="/pencil.svg" alt="Upload profile picture" className="!h-[30px] !w-[30px]" />
+        <Image
+          src="/pencil.svg"
+          alt="Upload profile picture"
+          className="!h-[30px] !w-[30px]"
+        />
       </button>
 
       <input

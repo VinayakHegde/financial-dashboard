@@ -1,48 +1,47 @@
 [
- 
   {
-    "date":"2024-12-28T00:00:00.000Z",
-    "deposit":150,
-    "withdrawal":200
+    "date": "2024-12-28T00:00:00.000Z",
+    "deposit": 150,
+    "withdrawal": 200
   },
   {
-    "date":"2024-12-27T00:00:00.000Z",
-    "deposit":700,
-    "withdrawal":370
+    "date": "2024-12-27T00:00:00.000Z",
+    "deposit": 700,
+    "withdrawal": 370
   },
   {
-    "date":"2024-12-26T00:00:00.000Z",
-    "deposit":300,
-    "withdrawal":400
+    "date": "2024-12-26T00:00:00.000Z",
+    "deposit": 300,
+    "withdrawal": 400
   },
   {
-    "date":"2024-12-25T00:00:00.000Z",
-    "deposit":200,
-    "withdrawal":290
+    "date": "2024-12-25T00:00:00.000Z",
+    "deposit": 200,
+    "withdrawal": 290
   },
   {
-    "date":"2024-12-24T00:00:00.000Z",
-    "deposit":600,
-    "withdrawal":580
+    "date": "2024-12-24T00:00:00.000Z",
+    "deposit": 600,
+    "withdrawal": 580
   },
   {
-    "date":"2024-12-23T00:00:00.000Z",
-    "deposit":500,
-    "withdrawal":650
+    "date": "2024-12-23T00:00:00.000Z",
+    "deposit": 500,
+    "withdrawal": 650
   },
   {
-    "date":"2024-12-22T00:00:00.000Z",
-    "deposit":290,
-    "withdrawal":500
+    "date": "2024-12-22T00:00:00.000Z",
+    "deposit": 290,
+    "withdrawal": 500
   },
   {
-    "date":"2024-12-21T00:00:00.000Z",
-    "deposit":700,
-    "withdrawal":300
+    "date": "2024-12-21T00:00:00.000Z",
+    "deposit": 700,
+    "withdrawal": 300
   },
   {
-    "date":"2024-12-20T00:00:00.000Z",
-    "deposit":300,
-    "withdrawal":500
+    "date": "2024-12-20T00:00:00.000Z",
+    "deposit": 300,
+    "withdrawal": 500
   }
 ]

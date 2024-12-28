@@ -1,5 +1,5 @@
-import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
-import { Typography } from "../typography";
+import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { Typography } from '../typography';
 
 type WrapperProps = {
   id: string;
@@ -32,38 +32,52 @@ export const FormField = ({
     />
     {errors[id] && (
       <span className="text-danger -mt-3 pl-0">
-        <Typography type="body" size="sm" color="inherit" weight="normal">{errors[id]?.message as string}</Typography>
+        <Typography type="body" size="sm" color="inherit" weight="normal">
+          {errors[id]?.message as string}
+        </Typography>
       </span>
     )}
   </FormFieldWrapper>
 );
 
-
-export const FormFieldWrapper = ({
-  id,
-  label,
-  children,
-}: WrapperProps) => (
+export const FormFieldWrapper = ({ id, label, children }: WrapperProps) => (
   <div className="flex flex-col gap-2 desktop:gap-3">
     <label htmlFor={id}>
       <span className="hidden desktop:inline-block">
-        <Typography type="body" size="md" color="gray-1000" weight="normal">{label}</Typography>
+        <Typography type="body" size="md" color="gray-1000" weight="normal">
+          {label}
+        </Typography>
       </span>
 
       <span className=" desktop:hidden">
-        <Typography type="body" size="custom-13" color="gray-1000" weight="normal">{label}</Typography>
+        <Typography
+          type="body"
+          size="custom-13"
+          color="gray-1000"
+          weight="normal"
+        >
+          {label}
+        </Typography>
       </span>
     </label>
     {children}
   </div>
-)
+);
 
-
-export const validatedFormField = (register: UseFormRegister<any>, errors: FieldErrors<any>) => {
-  const Component = (props: Omit<Props, 'register' | 'errors'>) => <FormField {...props} register={register as UseFormRegister<FieldValues>} errors={errors} />;
+export const validatedFormField = (
+  register: UseFormRegister<any>,
+  errors: FieldErrors<any>,
+) => {
+  const Component = (props: Omit<Props, 'register' | 'errors'>) => (
+    <FormField
+      {...props}
+      register={register as UseFormRegister<FieldValues>}
+      errors={errors}
+    />
+  );
   Component.displayName = 'FormField';
   return Component;
-}
+};
 
 /**
  * Inferred TypeScript type:
@@ -77,6 +91,6 @@ export const validatedFormField = (register: UseFormRegister<any>, errors: Field
  *  city?: string;
  * postcode?: string;
  * country?: string;
- * 
+ *
  * }
  */
