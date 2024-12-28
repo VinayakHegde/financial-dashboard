@@ -94,11 +94,11 @@ export const WeeklyActivityChart = ({ activities }: { activities: Activity[] }) 
   return (
     <div className='h-[254px] desktop:h-[325px] w-full'>
       <ResponsiveContainer>
-        <BarChart data={activities.slice(0, 7)} barGap={-20} maxBarSize={15}>
+        <BarChart data={activities.slice(0, 7)} barGap={-5} maxBarSize={15}>
           <CartesianGrid vertical={false} />
           <XAxis dataKey="date" tick={<CustomXAxisTick />} />
           <YAxis tick={<CustomYAxisTick />} />
-          <Tooltip content={<CustomTooltip {...{}} />} />
+          <Tooltip content={<CustomTooltip />} />
           <Legend align="right" verticalAlign="top" layout="horizontal" content={<CustomLegend />} />
           <Bar dataKey="withdrawal" shape={<RoundedBar className="fill-gray-1000" />} />
           <Bar dataKey="deposit" shape={<RoundedBar className="fill-info" />} />
