@@ -44,15 +44,15 @@ const getTextSize = (size: BodyProps['size']) => {
     case 'lg':
       return 'text-lg';
     case 'custom-13':
-      return 'text-custom-13';
+      return 'text-13';
     case 'custom-15':
-      return 'text-custom-15';
+      return 'text-15';
     case 'custom-17':
-      return 'text-custom-17';
+      return 'text-17';
     case 'custom-22':
-      return 'text-custom-22';
+      return 'text-22';
     case 'custom-25':
-      return 'text-custom-25';
+      return 'text-25';
     default:
       return 'text-xs';
   }
@@ -125,13 +125,13 @@ type HeadingProps = {
 const Heading = (props: HeadingProps) => {
   if (props.type === 'heading-1') {
     return (
-      <h1 className="text-custom-28 text-blue-300 font-primary font-semibold">
+      <h1 className="text-28 text-blue-300 font-primary font-semibold">
         {props.children}
       </h1>
     );
   }
   return (
-    <h2 className="text-custom-22 text-blue-300 font-primary font-semibold">
+    <h2 className="text-22 text-blue-300 font-primary font-semibold">
       {props.children}
     </h2>
   );

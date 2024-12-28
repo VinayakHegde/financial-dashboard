@@ -24,7 +24,7 @@ const CustomizedLabel = (props: any) => {
       fill="white"
       textAnchor={'middle'}
       dominantBaseline="central"
-      className="text-custom-13 desktop:text-custom-15 font-bold"
+      className="text-13 desktop:text-15 font-bold"
     >
       <tspan x={x} dy="-0.6em">{`${(percent * 100).toFixed(0)}%`}</tspan>
       <tspan x={x} dy="1.2em">
