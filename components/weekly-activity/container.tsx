@@ -9,7 +9,7 @@ type Props = {
 };
 export const WeeklyActivity = ({ activities }: Props) => {
   return (
-    <Section title="Weekly Activity" className="desktop:!w-[730px]">
+    <Section title="Weekly Activity" className="desktop:!w-730px">
       <WeeklyActivityChart activities={activities} />
     </Section>
   );
