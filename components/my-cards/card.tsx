@@ -5,7 +5,10 @@ import { toCurrency } from '@/utils/to-currency';
 import { maskNumber } from '@/utils/mask-number';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 export type CardType = {
   id: number;
@@ -67,7 +70,7 @@ export const Card = (props: CardType) => {
           <Image
             src={`/chip-${isCreditCard ? 'light' : 'dark'}.svg`}
             alt="Chip"
-            height={32} 
+            height={32}
             width={32}
           />
         </div>

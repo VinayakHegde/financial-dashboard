@@ -7,7 +7,10 @@ import { Transfer } from './transfer';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 type Props = {
   contacts: Contact[];

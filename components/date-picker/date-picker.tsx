@@ -5,7 +5,10 @@ import { getMonthYear, toLocaleDate } from '@/utils/date';
 import { Typography } from '../typography';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 type DatePickerProps = {
   value: Date | null;
