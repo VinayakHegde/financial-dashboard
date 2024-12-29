@@ -2,7 +2,10 @@
 
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 export default function Search() {
   return (

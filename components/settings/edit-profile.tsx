@@ -11,7 +11,10 @@ import { useRouter } from 'next/navigation';
 import { Button } from '../button';
 import dynamic from 'next/dynamic';
 
-const DatePicker = dynamic(() => import('@/components/date-picker').then(mod => mod.DatePicker), { ssr: false });
+const DatePicker = dynamic(
+  () => import('@/components/date-picker').then((mod) => mod.DatePicker),
+  { ssr: false },
+);
 type ProfileSchemaType = z.infer<typeof profileSchema>;
 
 export const EditProfile = () => {

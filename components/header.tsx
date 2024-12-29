@@ -9,7 +9,10 @@ import { appUser } from '@/utils/app-user';
 import { useSidebar } from './side-bar';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 const TITLE: Record<string, string> = {
   '/': 'Overview',

@@ -6,7 +6,10 @@ import { Typography } from '../typography';
 import { useSidebar } from './sidebar-context';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 export const SideBar = () => {
   const { isOpen, closeSidebar } = useSidebar();

@@ -2,7 +2,10 @@ import { useRef, useState } from 'react';
 import { appUser } from '@/utils/app-user';
 import dynamic from 'next/dynamic';
 
-const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
+const Image = dynamic(
+  () => import('@/components/image').then((mod) => mod.Image),
+  { ssr: false },
+);
 
 type ProfilePicUploaderProps = {
   initialImage: string | null;
