@@ -1,5 +1,4 @@
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
-import React from 'react';
 
 type CustomImageProps = {
   isAvatar?: boolean;

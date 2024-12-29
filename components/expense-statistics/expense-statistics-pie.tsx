@@ -38,7 +38,7 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
   return (
     <div className="h-275px desktop:h-325px w-full">
       <ResponsiveContainer>
-        <PieChart>
+        <PieChart className='pointer-events-none' tabIndex={-1} aria-hidden={true}>
           <Pie
             data={expenses}
             cx="50%"
@@ -51,6 +51,9 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
             fill="#8884d8"
             paddingAngle={5}
             cornerRadius={1}
+            className='pointer-events-none focus:outline-none'
+            tabIndex={-1}
+            aria-hidden={true}
           >
             {expenses.map((_, idx) => (
               <Cell key={`cell-${idx}`} className={FILLS[idx % FILLS.length]} />

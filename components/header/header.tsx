@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Typography } from './typography';
-import Search from './search';
-import { useUserContext } from './user-context';
+import { Typography } from '../typography';
+import { Search } from '../search';
+import { useUserContext } from '../user-context';
 import { appUser } from '@/utils/app-user';
-import { useSidebar } from './side-bar';
+import { useSidebar } from '../side-bar';
 import dynamic from 'next/dynamic';
 
 const Image = dynamic(

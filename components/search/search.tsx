@@ -7,7 +7,7 @@ const Image = dynamic(
   { ssr: false },
 );
 
-export default function Search() {
+export const Search = () => {
   return (
     <div className="bg-ghost-white gap-4 p-4 items-center rounded-full overflow-hidden flex">
       <Image src="/search.svg" alt="search" />
