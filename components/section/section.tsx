@@ -33,8 +33,11 @@ export const Section = ({
       <div className="flex justify-between items-center px-6 desktop:px-0">
         <Typography type="heading-2">{title}</Typography>
         {link && (
-          <Link href={link.href}>
-            <Typography type="body" size="custom-17">
+          <Link
+            href={link.href}
+            className="hover:underline text-dark-gray hover:text-steel-blue"
+          >
+            <Typography type="body" size="custom-17" color="inherit">
               {link.label}
             </Typography>
           </Link>

@@ -73,11 +73,18 @@ export default {
         '70px': '70px',
         '90px': '90px',
         '100px': '100px',
-        '170px': '170px',
-        '235px': '235px',
         '254px': '254px',
         '275px': '275px',
         '325px': '325px',
+      },
+      minHeight: {
+        '50px': '50px',
+        '70px': '70px',
+        '170px': '170px',
+        '235px': '235px',
+      },
+      maxHeight: {
+        '235px': '235px',
       },
       width: {
         '27px': '27px',
@@ -86,7 +93,6 @@ export default {
         '50px': '50px',
         '90px': '90px',
         '100px': '100px',
-        '125px': '125px',
         '140px': '140px',
         '190px': '190px',
         '265px': '265px',
@@ -94,6 +100,27 @@ export default {
         '450px': '450px',
         '635px': '635px',
         '730px': '730px',
+      },
+      minWidth: {
+        '100px': '100px',
+        '125px': '125px',
+        '265px': '265px',
+        '350px': '350px',
+      },
+      keyframes: {
+        ripple: {
+          '0%': {
+            transform: 'scale(0)',
+            opacity: '0.75',
+          },
+          '100%': {
+            transform: 'scale(4)',
+            opacity: '0',
+          },
+        },
+      },
+      animation: {
+        ripple: 'ripple 600ms linear',
       },
     },
   },
