@@ -19,7 +19,7 @@ const TITLE: Record<string, string> = {
   '/setting': 'Setting',
 };
 
-export default function Header() {
+export const Header = () => {
   const pathname = usePathname();
   const user = useUserContext();
   const { toggleSidebar } = useSidebar();
