@@ -69,7 +69,7 @@ const Item = ({ icon, title, href, enabled }: ItemType) => {
         onClick={handleClick}
         aria-disabled={!enabled}
         aria-current={isActive ? 'page' : undefined}
-        className={`flex items-center gap-8 p-4 pl-8 capitalize ${
+        className={`flex items-center gap-8 p-4 pl-8 capitalize w-full ${
           enabled
             ? 'hover:bg-gray-100'
             : 'cursor-not-allowed pointer-events-none'

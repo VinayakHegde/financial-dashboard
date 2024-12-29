@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Financial Dashboard
 
-## Getting Started
+![GitHub Repo stars](https://img.shields.io/github/stars/VinayakHegde/financial-dashboard?style=social)
+![Vercel](https://img.shields.io/badge/Host-Vercel-blue)
+![License](https://img.shields.io/github/license/VinayakHegde/financial-dashboard)
 
-First, run the development server:
+Soar Task is a modern web application built with Next.js, providing users with a seamless experience to manage tasks, track expenses, and monitor weekly activities. Leveraging cutting-edge technologies, Soar Task ensures a responsive and accessible interface for all users.
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Live Demo](#live-demo)
+- [Installation](#installation)
+- [Available Scripts](#available-scripts)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Task Management:** Create, edit, and manage your daily tasks efficiently.
+- **Expense Tracking:** Monitor your expenses with interactive charts and detailed summaries.
+- **Weekly Activity:** Visualize your weekly activities through dynamic bar charts.
+- **Profile Management:** Update your profile with ease using forms validated by React Hook Form and Zod.
+- **Responsive Design:** Optimized for both desktop and mobile devices.
+- **Accessible:** Built with accessibility best practices to ensure usability for all.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management:** React Context API
+- **Form Handling:** [React Hook Form](https://react-hook-form.com/)
+- **Validation:** [Zod](https://github.com/colinhacks/zod)
+- **Charts:** [Recharts](https://recharts.org/en-US/)
+- **Linting:** [ESLint](https://eslint.org/)
+- **Formatting:** [Prettier](https://prettier.io/)
+- **Package Manager:** [pnpm](https://pnpm.io/)
+- **Hosting:** [Vercel](https://vercel.com/)
+- **Version Control:** [GitHub](https://github.com/VinayakHegde/financial-dashboard)
+
+## Live Demo
+
+Experience Soar Task live on [Vercel](https://financial-dashboard-fawn.vercel.app/).
+
+## Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/VinayakHegde/financial-dashboard
+   cd soar-task
+    ```
+
+2.	Install Dependencies
+
+    Ensure you have pnpm installed. If not, install it globally:
+
+    ```bash
+    npm install -g pnpm
+    ```
+    Then, install the project dependencies:
+    ```bash
+    pnpm install
+    ```
+
+
+## Available Scripts
+
+In the project directory, you can run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm dev # Runs the app in development mode.cOpen `http://localhost:3000` to view it in the browser.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The page will reload if you make edits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build # Builds the app for production to the .next folder.
+```
 
-## Learn More
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm start # Starts the production server.
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ensure you have built the app using pnpm build before running this command.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm lint # Runs ESLint to analyze the code for potential errors and enforce code quality.
+```
+```bash
+pnpm format # Formats the codebase using Prettier to maintain consistent code styling.
+```
 
-## Deploy on Vercel
+Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Financial Dashboard app is deployed on Vercel, which provides seamless integration with GitHub for continuous deployment. Every push to the main branch triggers a new deployment.
