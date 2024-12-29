@@ -30,7 +30,11 @@ export default function BalanceHistoryChart({ balanceHistory }: Props) {
   return (
     <div className="h-275px w-full">
       <ResponsiveContainer>
-        <AreaChart data={balanceHistory.slice(0, 8)}>
+        <AreaChart
+          data={balanceHistory.slice(0, 8)}
+          aria-hidden="true"
+          tabIndex={-1}
+        >
           <defs>
             <linearGradient id="colorBalance" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#2D60FF" stopOpacity={0.4} />
@@ -38,9 +42,13 @@ export default function BalanceHistoryChart({ balanceHistory }: Props) {
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" />
-
-          <XAxis dataKey="month" tick={<CustomXAxisTick />} />
-          <YAxis tick={<CustomYAxisTick />} />
+          <XAxis
+            dataKey="month"
+            tick={<CustomXAxisTick />}
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+          <YAxis tick={<CustomYAxisTick />} aria-hidden="true" tabIndex={-1} />
           <Tooltip />
           <Area
             type="monotone"
@@ -48,6 +56,8 @@ export default function BalanceHistoryChart({ balanceHistory }: Props) {
             stroke="#1814F3"
             fill="url(#colorBalance)"
             strokeWidth={3}
+            aria-hidden="true"
+            tabIndex={-1}
           />
         </AreaChart>
       </ResponsiveContainer>

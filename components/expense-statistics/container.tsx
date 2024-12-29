@@ -8,7 +8,11 @@ export const ExpenseStatistics = (
   props: ComponentProps<typeof ExpenseStatisticsPie>,
 ) => {
   return (
-    <Section title="Expense Statistics" className="desktop:!w-350px">
+    <Section
+      title="Expense Statistics"
+      className="desktop:!w-350px"
+      aria-label="Expense Statistics Section"
+    >
       <ExpenseStatisticsPie {...props} />
     </Section>
   );

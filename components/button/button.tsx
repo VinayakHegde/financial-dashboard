@@ -59,6 +59,8 @@ export const Button: React.FC<ButtonProps> = ({
             width: ripple.size,
             height: ripple.size,
           }}
+          aria-hidden="true"
+          tabIndex={-1}
         />
       ))}
     </button>

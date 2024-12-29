@@ -52,6 +52,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
           toggleCalendar();
         }}
         className="flex items-center gap-2 justify-between w-full px-4 h-10 desktop:h-50px border border-pale-blue rounded-10 bg-white cursor-pointer hover:border-steel-blue outline-none"
+        aria-haspopup="dialog"
+        aria-expanded={showCalendar}
       >
         <span className="hidden desktop:inline-block whitespace-nowrap overflow-hidden">
           <Typography
@@ -74,6 +76,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             src="/chevron-right.svg"
             alt="Toggle calendar"
             className="!h-3 !w-3"
+            aria-hidden="true"
           />
         </span>
       </button>
@@ -82,6 +85,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         <div
           ref={calendarRef}
           className="absolute z-10 w-64 bg-white border border-ivory-gray shadow-xl rounded mt-1"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Select Date"
         >
           <div className="flex items-center justify-between border-b border-ivory-gray p-4">
             <button
@@ -92,8 +98,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             >
               <Image
                 src="/chevron-right.svg"
-                alt="Previous Month"
+                alt=""
                 className="!h-3 !w-3"
+                aria-hidden="true"
               />
             </button>
 
@@ -116,8 +123,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             >
               <Image
                 src="/chevron-right.svg"
-                alt="Next Month"
+                alt=""
                 className="!h-3 !w-3"
+                aria-hidden="true"
               />
             </button>
           </div>
@@ -136,9 +144,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             ))}
           </div>
 
-          <div className="grid grid-cols-7 gap-1 text-sm p-4 pt-0">
+          <div className="grid grid-cols-7 gap-1 text-sm p-4 pt-0" role="grid">
             {Array.from({ length: firstDayOfMonth }).map((_, i) => (
-              <div key={`blank-${i}`} />
+              <div key={`blank-${i}`} role="gridcell" />
             ))}
 
             {Array.from({ length: daysInMonth }).map((_, i) => {
