@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
-import { Image } from '../image';
 import { appUser } from '@/utils/app-user';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 type ProfilePicUploaderProps = {
   initialImage: string | null;
@@ -31,33 +33,34 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
   };
 
   return (
-    <div className="relative inline-block w-100px h-100px desktop:w-90px desktop:h-90px overflow-hidden">
+    <div className="relative inline-block w-fit h-fit overflow-hidden">
       <Image
         isAvatar
         src={preview ?? appUser(100)}
         alt={altText}
-        className="h-full w-full object-cover desktop:hidden"
+        className="desktop:hidden"
+        width={100}
+        height={100}
       />
       <Image
         isAvatar
         src={preview ?? appUser(90)}
         alt={altText}
-        className="h-full w-full object-cover hidden desktop:block"
+        className="hidden desktop:block"
+        width={90}
+        height={90}
       />
       <button
         type="button"
         onClick={handleUploadClick}
-        className="
-          absolute right-0 bottom-0 
-          transform rounded-full
-          bg-white shadow-sm
-        "
+        className="absolute right-0 bottom-0 transform rounded-fullbg-white shadow-sm"
         aria-label="Upload profile picture"
       >
         <Image
           src="/pencil.svg"
           alt="Upload profile picture"
-          className="!h-30px !w-30px"
+          width={30}
+          height={30}
         />
       </button>
 

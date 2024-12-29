@@ -1,10 +1,12 @@
 'use client';
 
 import { Transaction } from '@/services/get-transactions';
-import { Image } from '../image';
 import { Typography } from '../typography';
 import { toCurrency } from '@/utils/to-currency';
 import { toLocaleDate } from '@/utils/date';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 type Props = {
   transaction: Transaction;

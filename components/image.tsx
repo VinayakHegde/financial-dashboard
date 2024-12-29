@@ -1,20 +1,36 @@
-/* eslint-disable @next/next/no-img-element */
-type ImageProps = {
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import React from 'react';
+
+type CustomImageProps = {
   isAvatar?: boolean;
   src: string;
   alt: string;
   className?: string;
-  width?: string;
-  height?: string;
-};
-export const Image = ({ isAvatar, alt, src, className }: ImageProps) => {
-  const additianalClass = isAvatar ? 'rounded-full' : 'w-6 h-6';
+  width?: number;
+  height?: number;
+  priority?: boolean;
+} & Omit<NextImageProps, 'src' | 'alt' | 'width' | 'height'>;
+
+export const Image: React.FC<CustomImageProps> = ({
+  isAvatar = false,
+  alt,
+  src,
+  className = '',
+  width = 24,
+  height = 24,
+  priority = false,
+  ...props
+}) => {
+  const additionalClasses = isAvatar ? 'rounded-full' : '';
   return (
-    <img
+    <NextImage
       src={src}
       alt={alt}
-      className={`${additianalClass} ${className}`}
-      loading="lazy"
+      className={`object-cover ${additionalClasses} ${className}`}
+      width={width}
+      height={height}
+      {...(priority ? { priority } : { loading: 'lazy' })}
+      {...props}
     />
   );
 };

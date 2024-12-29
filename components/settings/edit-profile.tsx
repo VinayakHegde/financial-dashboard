@@ -1,6 +1,5 @@
 'use client';
 
-import { DatePicker } from '../date-picker';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { profileSchema } from './schema';
@@ -10,7 +9,9 @@ import { ProfilePic } from './profile-pic';
 import { useUserContext } from '../user-context';
 import { useRouter } from 'next/navigation';
 import { Button } from '../button';
+import dynamic from 'next/dynamic';
 
+const DatePicker = dynamic(() => import('@/components/date-picker').then(mod => mod.DatePicker), { ssr: false });
 type ProfileSchemaType = z.infer<typeof profileSchema>;
 
 export const EditProfile = () => {
@@ -56,7 +57,7 @@ export const EditProfile = () => {
   return (
     <div className="flex flex-col gap-8 w-full">
       <div className="flex flex-col desktop:flex-row gap-10">
-        <div className="flex items-center justify-center w-full desktop:w-90px desktop:h-90px">
+        <div className="flex items-center justify-center desktop:items-start">
           <ProfilePic
             initialImage={user.profile?.displayPicture ?? null}
             onChange={handleFileSelected}

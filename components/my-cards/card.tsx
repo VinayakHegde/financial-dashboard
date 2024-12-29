@@ -2,8 +2,10 @@
 
 import { Typography } from '../typography';
 import { toCurrency } from '@/utils/to-currency';
-import { Image } from '../image';
 import { maskNumber } from '@/utils/mask-number';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 export type CardType = {
   id: number;
@@ -65,7 +67,8 @@ export const Card = (props: CardType) => {
           <Image
             src={`/chip-${isCreditCard ? 'light' : 'dark'}.svg`}
             alt="Chip"
-            className="!w-8 !h-8"
+            height={32} 
+            width={32}
           />
         </div>
         <div className="flex gap-10 items-center">
@@ -186,7 +189,17 @@ export const Card = (props: CardType) => {
         <Image
           src={`/card-vendor-${isCreditCard ? 'light' : 'dark'}.svg`}
           alt="Card Vendor"
-          className="desktop:!w-11 desktop:!h-30px !w-27px !h-18px"
+          className="desktop:block hidden"
+          width={44}
+          height={30}
+        />
+
+        <Image
+          src={`/card-vendor-${isCreditCard ? 'light' : 'dark'}.svg`}
+          alt="Card Vendor"
+          className="desktop:hidden"
+          width={27}
+          height={18}
         />
       </div>
     </div>
