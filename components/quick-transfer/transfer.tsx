@@ -1,3 +1,4 @@
+import { Button } from '../button';
 import { Image } from '../image';
 import { Typography } from '../typography';
 
@@ -16,7 +17,10 @@ export const Transfer = ({ amount }: Props) => {
           type="number"
           placeholder={amount.toFixed(2)}
         />
-        <button className="bg-dark-gray h-50px text-white rounded-50 px-6 flex gap-2 items-center min-w-100px desktop:min-w-125px">
+        <Button
+          className="bg-dark-gray h-50px text-white rounded-50 px-6 flex gap-2 items-center min-w-100px desktop:min-w-125px"
+          onClick={() => alert('Amount sent')}
+        >
           <div className="hidden desktop:flex items-center gap-2">
             <Typography type="body" size="md" weight="medium" color="inherit">
               Send
@@ -37,7 +41,7 @@ export const Transfer = ({ amount }: Props) => {
             alt="send"
             className="!w-4 !h-4 desktop:!w-6 desktop:!h-6"
           />
-        </button>
+        </Button>
       </div>
     </div>
   );
