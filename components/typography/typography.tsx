@@ -1,3 +1,5 @@
+'use client';
+
 type TypographyProps = HeadingProps | BodyProps;
 
 export const Typography = (props: TypographyProps) => {
@@ -7,6 +9,7 @@ export const Typography = (props: TypographyProps) => {
 
   return <Heading {...props} />;
 };
+
 type BodyProps = {
   children: string;
   type: 'body';
@@ -32,7 +35,8 @@ type BodyProps = {
     | 'dark-gray'
     | 'inherit';
   uppercase?: boolean;
-};
+} & React.HTMLAttributes<HTMLParagraphElement>;
+
 const getTextSize = (size: BodyProps['size']) => {
   switch (size) {
     case 'xxs':
@@ -59,10 +63,7 @@ const getTextSize = (size: BodyProps['size']) => {
 };
 
 const getFontFamily = (isSecondaryFont: BodyProps['isSecondaryFont']) => {
-  if (isSecondaryFont) {
-    return 'font-secondary';
-  }
-  return 'font-primary';
+  return isSecondaryFont ? 'font-secondary' : 'font-primary';
 };
 
 const getFontWeight = (weight: BodyProps['weight']) => {
@@ -88,8 +89,6 @@ const getTextColor = (color: BodyProps['color']) => {
       return 'text-steel-blue';
     case 'sky-blue':
       return 'text-sky-blue';
-    case 'medium-gray':
-      return 'text-medium-gray';
     case 'ghost-white':
       return 'text-ghost-white';
     case 'dark-gray':
@@ -100,6 +99,7 @@ const getTextColor = (color: BodyProps['color']) => {
       return 'text-navy-blue';
   }
 };
+
 const Body = ({
   children,
   size = 'sm',
@@ -107,10 +107,14 @@ const Body = ({
   weight = 'semibold',
   color = 'navy-blue',
   uppercase,
+  ...rest
 }: BodyProps) => {
   return (
     <p
-      className={`${getTextSize(size)} ${getFontFamily(isSecondaryFont)} ${getFontWeight(weight)} ${getTextColor(color)} ${uppercase ? 'uppercase' : ''}`}
+      className={`${getTextSize(size)} ${getFontFamily(isSecondaryFont)} ${getFontWeight(weight)} ${getTextColor(color)} ${
+        uppercase ? 'uppercase' : ''
+      }`}
+      {...rest}
     >
       {children}
     </p>
@@ -120,19 +124,22 @@ const Body = ({
 type HeadingProps = {
   children: string;
   type: 'heading-1' | 'heading-2';
-};
+} & React.HTMLAttributes<HTMLHeadingElement>;
 
-const Heading = (props: HeadingProps) => {
-  if (props.type === 'heading-1') {
+const Heading = ({ children, type, ...rest }: HeadingProps) => {
+  if (type === 'heading-1') {
     return (
-      <h1 className="text-28 text-navy-blue font-primary font-semibold">
-        {props.children}
+      <h1
+        className="text-28 text-navy-blue font-primary font-semibold"
+        {...rest}
+      >
+        {children}
       </h1>
     );
   }
   return (
-    <h2 className="text-22 text-navy-blue font-primary font-semibold">
-      {props.children}
+    <h2 className="text-22 text-navy-blue font-primary font-semibold" {...rest}>
+      {children}
     </h2>
   );
 };

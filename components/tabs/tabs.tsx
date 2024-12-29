@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 
 type TabProps = {
@@ -50,6 +52,10 @@ export const Tabs = ({ children, className = '' }: TabsProps) => {
         key={`tab-btn-${index}`}
         onClick={() => handleTabClick(index, isDisabled)}
         disabled={isDisabled}
+        role="tab"
+        aria-selected={isActive}
+        aria-controls={`tabpanel-${index}`}
+        id={`tab-${index}`}
         className={`${baseClasses} ${isActive ? activeClasses : ''}`}
       >
         {title}
@@ -58,13 +64,24 @@ export const Tabs = ({ children, className = '' }: TabsProps) => {
   });
 
   const activeTabContent = tabList[activeIndex];
+  const tabPanelId = `tabpanel-${activeIndex}`;
 
   return (
     <div className={className}>
-      <div className="flex border-b gap-3 desktop:gap-10 border-ivory-gray">
+      <div
+        className="flex border-b gap-3 desktop:gap-10 border-ivory-gray"
+        role="tablist"
+      >
         {tabButtons}
       </div>
-      <div className="p-6 desktop:p-8">{activeTabContent}</div>
+      <div
+        className="p-6 desktop:p-8"
+        role="tabpanel"
+        id={tabPanelId}
+        aria-labelledby={`tab-${activeIndex}`}
+      >
+        {activeTabContent}
+      </div>
     </div>
   );
 };

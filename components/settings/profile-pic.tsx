@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef, useState } from 'react';
 import { appUser } from '@/utils/app-user';
 import dynamic from 'next/dynamic';
@@ -56,14 +58,16 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
       <button
         type="button"
         onClick={handleUploadClick}
-        className="absolute right-0 bottom-0 transform rounded-fullbg-white shadow-sm"
+        className="absolute right-0 bottom-0 transform rounded-full bg-white shadow-sm"
         aria-label="Upload profile picture"
       >
         <Image
           src="/pencil.svg"
-          alt="Upload profile picture"
+          alt=""
+          className="aria-hidden=true"
           width={30}
           height={30}
+          tabIndex={-1}
         />
       </button>
 
@@ -73,6 +77,8 @@ export const ProfilePic: React.FC<ProfilePicUploaderProps> = ({
         accept="image/*"
         className="hidden"
         onChange={handleFileChange}
+        aria-hidden="true"
+        tabIndex={-1}
       />
     </div>
   );

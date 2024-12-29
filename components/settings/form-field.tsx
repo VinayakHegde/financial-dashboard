@@ -1,3 +1,5 @@
+'use client';
+
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import { Typography } from '../typography';
 
@@ -29,9 +31,11 @@ export const FormField = ({
       {...register(id)}
       className={`w-full px-4 h-10 desktop:h-50px border border-pale-blue rounded-10 bg-white cursor-pointer hover:border-steel-blue text-steel-blue text-sm desktop:text-15 outline-none ${errors[id] ? 'border-danger' : ''}`}
       placeholder={placeholder}
+      aria-invalid={errors[id] ? 'true' : 'false'}
+      aria-describedby={errors[id] ? `${id}-error` : undefined}
     />
     {errors[id] && (
-      <span className="text-danger -mt-3 pl-0">
+      <span className="text-danger -mt-3 pl-0" id={`${id}-error`} role="alert">
         <Typography type="body" size="sm" color="inherit" weight="normal">
           {errors[id]?.message as string}
         </Typography>
@@ -49,7 +53,7 @@ export const FormFieldWrapper = ({ id, label, children }: WrapperProps) => (
         </Typography>
       </span>
 
-      <span className=" desktop:hidden">
+      <span className="desktop:hidden">
         <Typography
           type="body"
           size="custom-13"

@@ -23,7 +23,11 @@ export const Card = (props: CardType) => {
   const isCreditCard = props.category === 'credit';
   return (
     <div
-      className={`border rounded-25 min-w-265px desktop:min-w-350px min-h-170px desktop:min-h-235px ${isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-pale-blue'}  flex flex-col justify-between`}
+      className={`border rounded-25 min-w-265px desktop:min-w-350px min-h-170px desktop:min-h-235px ${
+        isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-pale-blue'
+      } flex flex-col justify-between`}
+      role="article"
+      aria-label={`Card ending with ${maskNumber(props.cardNumber)}`}
     >
       <div className="px-8 pt-6 flex flex-col gap-4 desktop:gap-6">
         <div className="flex justify-between items-center">
@@ -165,7 +169,10 @@ export const Card = (props: CardType) => {
       </div>
 
       <div
-        className={`${isCreditCard ? 'bg-dark-card-number' : 'border-t border-t-pale-blue'}  min-h-50px desktop:min-h-70px px-8 desktop:py-5 flex items-center justify-between`}
+        className={`${
+          isCreditCard ? 'bg-dark-card-number' : 'border-t border-t-pale-blue'
+        } min-h-50px desktop:min-h-70px px-8 desktop:py-5 flex items-center justify-between`}
+        aria-label={`Card number ending with ${maskNumber(props.cardNumber)}`}
       >
         <div className="hidden desktop:block">
           <Typography
