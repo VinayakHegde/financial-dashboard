@@ -29,13 +29,16 @@ const getBackgroundColor = (logo?: Transaction['logo']) => {
 
 export const RecentTransaction = ({ transaction }: Props) => {
   return (
-    <div className="flex items-center gap-4">
+    <div
+      className="flex items-center gap-4"
+      role="listitem"
+      aria-label={`Transaction ${transaction.description}`}
+    >
       <div
         className={`${getBackgroundColor(transaction.logo)} flex items-center rounded-full overflow-hidden`}
+        aria-hidden="true"
       >
-        {transaction.logo && (
-          <Image src={`/${transaction.logo}.svg`} alt={transaction.logo} />
-        )}
+        {transaction.logo && <Image src={`/${transaction.logo}.svg`} alt="" />}
       </div>
       <div className="flex flex-1 flex-col gap-1">
         <Typography type="body" size="md" weight="medium" color="dark-gray">
@@ -46,11 +49,15 @@ export const RecentTransaction = ({ transaction }: Props) => {
           size="custom-15"
           weight="normal"
           color="steel-blue"
+          aria-label={`Date ${toLocaleDate(transaction.date)}`}
         >
           {toLocaleDate(transaction.date)}
         </Typography>
       </div>
-      <div className={getTextColor(transaction.type)}>
+      <div
+        className={getTextColor(transaction.type)}
+        aria-label={`Amount ${toCurrency(transaction.amount)}`}
+      >
         <Typography type="body" size="md" weight="medium" color="inherit">
           {toCurrency(transaction.amount)}
         </Typography>

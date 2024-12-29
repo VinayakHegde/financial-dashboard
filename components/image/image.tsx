@@ -1,3 +1,5 @@
+'use client';
+
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
 type CustomImageProps = {
@@ -29,6 +31,8 @@ export const Image: React.FC<CustomImageProps> = ({
       width={width}
       height={height}
       {...(priority ? { priority } : { loading: 'lazy' })}
+      aria-hidden="true"
+      tabIndex={-1}
       {...props}
     />
   );

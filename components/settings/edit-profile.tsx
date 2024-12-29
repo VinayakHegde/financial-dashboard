@@ -72,6 +72,8 @@ export const EditProfile = () => {
           id="profile-form"
           onSubmit={handleSubmit(onSubmit)}
           className="flex-1 grid grid-cols-1 gap-x-10 gap-y-6 w-full desktop:grid-cols-2 max-w-full mx-auto"
+          role="form"
+          aria-label="Edit Profile Form"
         >
           <FormField
             id="fullName"
@@ -135,6 +137,7 @@ export const EditProfile = () => {
           type="submit"
           form="profile-form"
           className="bg-dark-gray text-white px-4 py-2 rounded-10 desktop:rounded-15 w-full max-h-10 desktop:w-190px desktop:h-50px disabled:opacity-50"
+          aria-label="Save Profile"
         >
           Save
         </Button>
