@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Typography } from './typography';
-import { Image } from './image';
 import Search from './search';
 import { useUserContext } from './user-context';
 import { appUser } from '@/utils/app-user';
 import { useSidebar } from './side-bar';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 const TITLE: Record<string, string> = {
   '/': 'Overview',
@@ -23,7 +25,7 @@ export default function Header() {
   return (
     <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">
       <div className="min-w-64 hidden desktop:flex border-r border-light-blue-gray gap-2 items-center p-5 pl-8">
-        <Image src="/task.svg" alt="task" className="!w-35px !h-35px" />
+        <Image src="/task.svg" alt="task" height={35} width={35} />
         <Typography type="body" size="custom-25" weight="x-bold">
           Soar Task
         </Typography>
@@ -57,16 +59,16 @@ export default function Header() {
             alt="app-user"
             isAvatar
             className="hidden desktop:block"
-            width="60px"
-            height="60px"
+            width={60}
+            height={60}
           />
           <Image
             src={`${user.profile?.displayPicture ?? appUser(35)}`}
             alt="app-user"
             isAvatar
-            className="desktop:hidden h-35px w-35px"
-            width="35px"
-            height="35px"
+            className="desktop:hidden"
+            width={35}
+            height={35}
           />
         </div>
       </div>

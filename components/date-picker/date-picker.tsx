@@ -2,8 +2,10 @@
 
 import { useDatePicker } from '@/hooks/use-date-picker';
 import { getMonthYear, toLocaleDate } from '@/utils/date';
-import { Image } from '../image';
 import { Typography } from '../typography';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 type DatePickerProps = {
   value: Date | null;

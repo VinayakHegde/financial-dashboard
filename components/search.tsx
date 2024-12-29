@@ -1,6 +1,8 @@
 'use client';
 
-import { Image } from './image';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 export default function Search() {
   return (

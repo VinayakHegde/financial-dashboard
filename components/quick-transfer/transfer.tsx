@@ -1,6 +1,8 @@
 import { Button } from '../button';
-import { Image } from '../image';
 import { Typography } from '../typography';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 type Props = {
   amount: number;
@@ -46,7 +48,16 @@ export const Transfer = ({ amount }: Props) => {
           <Image
             src="/send.svg"
             alt="send"
-            className="!w-4 !h-4 desktop:!w-6 desktop:!h-6"
+            className="hidden desktop:block"
+            width={24}
+            height={24}
+          />
+          <Image
+            src="/send.svg"
+            alt="send"
+            className="desktop:hidden"
+            width={16}
+            height={16}
           />
         </Button>
       </div>

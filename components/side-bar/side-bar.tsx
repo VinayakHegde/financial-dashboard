@@ -2,9 +2,11 @@
 
 import { ItemType, items } from './config';
 import { usePathname, useRouter } from 'next/navigation';
-import { Image } from '../image';
 import { Typography } from '../typography';
 import { useSidebar } from './sidebar-context';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 export const SideBar = () => {
   const { isOpen, closeSidebar } = useSidebar();

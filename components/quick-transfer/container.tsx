@@ -4,8 +4,10 @@ import { Contact } from '@/services/get-contacts';
 import { Section } from '../section';
 import { TransferTo } from './transfer-to';
 import { Transfer } from './transfer';
-import { Image } from '../image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const Image = dynamic(() => import('@/components/image').then(mod => mod.Image), { ssr: false });
 
 type Props = {
   contacts: Contact[];
@@ -26,7 +28,8 @@ export const QuickTransfer = ({ contacts }: Props) => {
             <Image
               src="/chevron-right.svg"
               alt="Chevron Right"
-              className="!h-5 !w-1.5"
+              width={8}
+              height={20}
             />
           </Link>
         </li>
