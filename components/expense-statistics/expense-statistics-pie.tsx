@@ -25,6 +25,9 @@ const CustomizedLabel = (props: IGeneric.UnknownProps) => {
       textAnchor={'middle'}
       dominantBaseline="central"
       className="text-13 desktop:text-15 font-bold"
+      aria-hidden="true"
+      tabIndex={-1}
+      focusable="false"
     >
       <tspan x={x} dy="-0.6em">{`${(percent * 100).toFixed(0)}%`}</tspan>
       <tspan x={x} dy="1.2em">
@@ -60,7 +63,13 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
             aria-hidden={true}
           >
             {expenses.map((_, idx) => (
-              <Cell key={`cell-${idx}`} className={FILLS[idx % FILLS.length]} />
+              <Cell
+                key={`cell-${idx}`}
+                className={FILLS[idx % FILLS.length]}
+                aria-hidden="true"
+                tabIndex={-1}
+                focusable="false"
+              />
             ))}
           </Pie>
         </PieChart>

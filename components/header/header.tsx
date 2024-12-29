@@ -26,15 +26,21 @@ export const Header = () => {
   const title = TITLE[pathname] ?? 'Not Found';
 
   return (
-    <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">
-      <div className="min-w-64 hidden desktop:flex border-r border-light-blue-gray gap-2 items-center p-5 pl-8">
+    <header
+      className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row"
+      role="banner"
+    >
+      <div
+        className="min-w-64 hidden desktop:flex border-r border-light-blue-gray gap-2 items-center p-5 pl-8"
+        aria-hidden="true"
+      >
         <Image src="/task.svg" alt="task" height={35} width={35} />
         <Typography type="body" size="custom-25" weight="x-bold">
           Soar Task
         </Typography>
       </div>
 
-      <div className="flex flex-1 items-center  justify-between p-5">
+      <div className="flex flex-1 items-center justify-between p-5">
         <button
           type="button"
           onClick={toggleSidebar}
@@ -48,15 +54,22 @@ export const Header = () => {
           <div className="hidden desktop:block">
             <Search />
           </div>
-          <Link href="/setting">
-            <div className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block">
-              <Image src="/settings-blue.svg" alt="settings" />
+          <Link href="/setting" aria-label="Settings">
+            <div
+              className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block"
+              role="link"
+            >
+              <Image src="/settings-blue.svg" alt="" aria-hidden="true" />
             </div>
           </Link>
 
-          <div className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block">
-            <Image src="/notification.svg" alt="notification" />
-          </div>
+          <button
+            type="button"
+            className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block"
+            aria-label="Notifications"
+          >
+            <Image src="/notification.svg" alt="" aria-hidden="true" />
+          </button>
           <Image
             src={`${user.profile?.displayPicture ?? appUser(60)}`}
             alt="app-user"
