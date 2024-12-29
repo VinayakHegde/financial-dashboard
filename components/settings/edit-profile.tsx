@@ -19,6 +19,9 @@ type ProfileSchemaType = z.infer<typeof profileSchema>;
 
 export const EditProfile = () => {
   const user = useUserContext();
+  const dateOfBirth = user.profile?.dateOfBirth
+    ? new Date(user.profile.dateOfBirth)
+    : undefined;
   const {
     register,
     handleSubmit,
@@ -29,9 +32,7 @@ export const EditProfile = () => {
     resolver: zodResolver(profileSchema),
     defaultValues: {
       ...user.profile,
-      dateOfBirth: user.profile?.dateOfBirth
-        ? new Date(user.profile.dateOfBirth)
-        : null,
+      dateOfBirth,
       password: '',
     },
   });
