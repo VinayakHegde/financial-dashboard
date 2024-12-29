@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
   const user = useUserContext();
   const { toggleSidebar } = useSidebar();
-  const title = TITLE[pathname];
+  const title = TITLE[pathname] ?? 'Not Found';
 
   return (
     <header className="desktop:fixed desktop:left-0 desktop:right-0 z-10 bg-white shadow-md flex flex-col desktop:flex-row">

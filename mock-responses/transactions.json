@@ -28,20 +28,55 @@
     "type": "credit",
     "description": "Refund",
     "date": "2023-08-06T12:00:00Z",
-    "amount": 10
+    "amount": 10,
+    "logo": "dollar"
   },
   {
     "id": 105,
     "type": "debit",
     "description": "Netflix Subscription",
     "date": "2023-08-10T12:00:00Z",
-    "amount": -12.99
+    "amount": -12.99,
+    "logo": "paypal"
   },
   {
     "id": 106,
     "type": "credit",
     "description": "Freelance Payment",
     "date": "2023-08-15T12:00:00Z",
-    "amount": 500
+    "amount": 500,
+    "logo": "dollar"
+  },
+  {
+    "id": 107,
+    "type": "debit",
+    "description": "Spotify Subscription",
+    "date": "2023-08-20T12:00:00Z",
+    "amount": -9.99,
+    "logo": "paypal"
+  },
+  {
+    "id": 108,
+    "type": "credit",
+    "description": "Refund",
+    "date": "2023-08-25T12:00:00Z",
+    "amount": 10,
+    "logo": "dollar"
+  },
+  {
+    "id": 109,
+    "type": "debit",
+    "description": "Amazon Purchase",
+    "date": "2023-08-30T12:00:00Z",
+    "amount": -50.99,
+    "logo": "cards"
+  },
+  {
+    "id": 110,
+    "type": "credit",
+    "description": "Salary Payment",
+    "date": "2023-09-05T12:00:00Z",
+    "amount": 2000,
+    "logo": "dollar"
   }
 ]

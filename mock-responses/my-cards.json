@@ -17,18 +17,18 @@
   },
   {
     "id": 3,
-    "cardNumber": 3778123412341234,
+    "cardNumber": 3778123412341222,
     "cardholderName": "Jane Smith",
     "expires": "12/29",
-    "balance": 2500.32,
-    "category": "credit"
+    "balance": 100.32,
+    "category": "debit"
   },
   {
     "id": 4,
-    "cardNumber": 4665123412345678,
+    "cardNumber": 4665123412345666,
     "cardholderName": "Jane Smith",
     "expires": "10/28",
-    "balance": 4820.75,
+    "balance": 2.75,
     "category": "debit"
   }
 ]

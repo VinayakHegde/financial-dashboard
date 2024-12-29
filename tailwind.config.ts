@@ -85,6 +85,7 @@ export default {
       },
       maxHeight: {
         '235px': '235px',
+        '290px': '290px',
       },
       width: {
         '27px': '27px',
