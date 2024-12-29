@@ -4,7 +4,7 @@
 ![Vercel](https://img.shields.io/badge/Host-Vercel-blue)
 ![License](https://img.shields.io/github/license/VinayakHegde/financial-dashboard)
 
-Soar Task is a modern web application built with Next.js, providing users with a seamless experience to manage tasks, track expenses, and monitor weekly activities. Leveraging cutting-edge technologies, Soar Task ensures a responsive and accessible interface for all users.
+This app is a modern web application built with Next.js, providing users with a seamless experience to manage tasks, track expenses, and monitor weekly activities. Leveraging cutting-edge technologies, this app ensures a responsive and accessible interface for all users.
 
 ## Table of Contents
 
@@ -14,9 +14,6 @@ Soar Task is a modern web application built with Next.js, providing users with a
 - [Installation](#installation)
 - [Available Scripts](#available-scripts)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
@@ -51,7 +48,7 @@ Experience Soar Task live on [Vercel](https://financial-dashboard-fawn.vercel.ap
 
    ```bash
    git clone https://github.com/VinayakHegde/financial-dashboard
-   cd soar-task
+   cd financial-dashboard
     ```
 
 2.	Install Dependencies
@@ -97,6 +94,6 @@ pnpm lint # Runs ESLint to analyze the code for potential errors and enforce cod
 pnpm format # Formats the codebase using Prettier to maintain consistent code styling.
 ```
 
-Deployment
+## Deployment
 
 Financial Dashboard app is deployed on Vercel, which provides seamless integration with GitHub for continuous deployment. Every push to the main branch triggers a new deployment.
