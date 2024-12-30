@@ -44,7 +44,6 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
         <PieChart
           className="pointer-events-none"
           tabIndex={-1}
-          aria-hidden={true}
         >
           <Pie
             data={expenses}
@@ -60,7 +59,6 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
             cornerRadius={1}
             className="pointer-events-none focus:outline-none"
             tabIndex={-1}
-            aria-hidden={true}
           >
             {expenses.map((_, idx) => (
               <Cell

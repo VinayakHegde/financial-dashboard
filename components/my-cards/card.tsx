@@ -26,7 +26,7 @@ export const Card = (props: CardType) => {
       className={`border rounded-25 min-w-265px desktop:min-w-350px min-h-170px desktop:min-h-235px ${
         isCreditCard ? 'bg-dark-card text-white' : 'bg-white border-pale-blue'
       } flex flex-col justify-between`}
-      role="article"
+      role="listitem"
       aria-label={`Card ending with ${maskNumber(props.cardNumber)}`}
     >
       <div className="px-8 pt-6 flex flex-col gap-4 desktop:gap-6">
