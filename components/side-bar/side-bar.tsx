@@ -21,7 +21,6 @@ export const SideBar = () => {
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
           desktop:translate-x-0 desktop:flex desktop:top-[100px]
         `}
-      role="navigation"
       aria-label="Sidebar Navigation"
     >
       <div
