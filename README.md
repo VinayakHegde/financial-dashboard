@@ -17,7 +17,7 @@ This app is a modern web application built with Next.js, providing users with a 
 
 ## Features
 
-- **Card Management:** View cards 
+- **Card Management:** View cards
 - **Transaction History:** Track your transactions with detailed information.
 - **Expense Tracking:** Monitor your expenses with interactive charts and detailed summaries.
 - **Weekly Activity:** Visualize your weekly activities through dynamic bar charts.
@@ -51,20 +51,21 @@ Experience Soar Task live on [Vercel](https://financial-dashboard-fawn.vercel.ap
    ```bash
    git clone https://github.com/VinayakHegde/financial-dashboard
    cd financial-dashboard
-    ```
+   ```
 
-2.	Install Dependencies
+2. Install Dependencies
 
-    Ensure you have pnpm installed. If not, install it globally:
+   Ensure you have pnpm installed. If not, install it globally:
 
-    ```bash
-    npm install -g pnpm
-    ```
-    Then, install the project dependencies:
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   npm install -g pnpm
+   ```
 
+   Then, install the project dependencies:
+
+   ```bash
+   pnpm install
+   ```
 
 ## Available Scripts
 
@@ -75,7 +76,6 @@ pnpm dev # Runs the app in development mode.cOpen `http://localhost:3000` to vie
 ```
 
 The page will reload if you make edits.
-
 
 ```bash
 pnpm build # Builds the app for production to the .next folder.
@@ -92,6 +92,7 @@ Ensure you have built the app using pnpm build before running this command.
 ```bash
 pnpm lint # Runs ESLint to analyze the code for potential errors and enforce code quality.
 ```
+
 ```bash
 pnpm format # Formats the codebase using Prettier to maintain consistent code styling.
 ```

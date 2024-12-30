@@ -41,10 +41,7 @@ export const ExpenseStatisticsPie = ({ expenses }: Props) => {
   return (
     <div className="h-275px desktop:h-325px w-full">
       <ResponsiveContainer>
-        <PieChart
-          className="pointer-events-none"
-          tabIndex={-1}
-        >
+        <PieChart className="pointer-events-none" tabIndex={-1}>
           <Pie
             data={expenses}
             cx="50%"
