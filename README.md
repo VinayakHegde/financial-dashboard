@@ -17,9 +17,11 @@ This app is a modern web application built with Next.js, providing users with a 
 
 ## Features
 
-- **Task Management:** Create, edit, and manage your daily tasks efficiently.
+- **Card Management:** View cards 
+- **Transaction History:** Track your transactions with detailed information.
 - **Expense Tracking:** Monitor your expenses with interactive charts and detailed summaries.
 - **Weekly Activity:** Visualize your weekly activities through dynamic bar charts.
+- ** Balance:** Keep track of your balance
 - **Profile Management:** Update your profile with ease using forms validated by React Hook Form and Zod.
 - **Responsive Design:** Optimized for both desktop and mobile devices.
 - **Accessible:** Built with accessibility best practices to ensure usability for all.
