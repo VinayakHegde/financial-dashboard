@@ -55,9 +55,7 @@ export const Header = () => {
             <Search />
           </div>
           <Link href="/setting" aria-label="Settings">
-            <div
-              className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block"
-            >
+            <div className="bg-ghost-white flex items-center p-4 rounded-full overflow-hidden hidden desktop:block">
               <Image src="/settings-blue.svg" alt="" aria-hidden="true" />
             </div>
           </Link>
